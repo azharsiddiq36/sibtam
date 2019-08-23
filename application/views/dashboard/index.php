@@ -19,7 +19,7 @@
 
                 <!-- Widget block -->
                 <div class="col-sm-3 col-xs-6">
-                    <a class="data-block widget-block" href="index.html#">
+                    <a class="data-block widget-block" href="<?= base_url("administrator/kategori")?>">
                         <span class="widget-icon elusive icon-file-new-alt"></span>
                         <strong>Kategori</strong>
                     </a>
@@ -30,7 +30,7 @@
 
                 <!-- Widget block -->
                 <div class="col-sm-3 col-xs-6">
-                    <a class="data-block widget-block" href="index.html#">
+                    <a class="data-block widget-block" href="<?= base_url("administrator/postingan")?>">
                         <span class="badge">3</span>
                         <span class="widget-icon elusive icon-globe-alt"></span>
                         <strong>Postingan</strong>
@@ -40,7 +40,7 @@
 
                 <!-- Widget block -->
                 <div class="col-sm-3 col-xs-6">
-                    <a class="data-block widget-block" href="index.html#">
+                    <a class="data-block widget-block" href="<?= base_url("administrator/kucing")?>">
                         <span class="widget-icon elusive icon-github"></span>
                         <strong>Kucing</strong>
                     </a>
@@ -48,7 +48,7 @@
                 <!-- /Widget block -->
                 <!-- Widget block -->
                 <div class="col-sm-3 col-xs-6">
-                    <a class="data-block widget-block" href="index.html#">
+                    <a class="data-block widget-block" href="<?= base_url("administrator/toko")?>">
                         <span class="widget-icon elusive icon-shopping-cart-sign"></span>
                         <strong>Toko (CatShop)</strong>
                     </a>
@@ -57,7 +57,7 @@
 
                 <!-- Widget block -->
                 <div class="col-sm-3 col-xs-6">
-                    <a class="data-block widget-block" href="index.html#">
+                    <a class="data-block widget-block" href="<?= base_url("administrator/kontes")?>">
                         <span class="widget-icon elusive icon-network"></span>
                         <strong>Kontes</strong>
                     </a>
@@ -66,14 +66,14 @@
 
                 <!-- Widget block -->
                 <div class="col-sm-3 col-xs-6">
-                    <a class="data-block widget-block" href="index.html#">
+                    <a class="data-block widget-block" href="<?= base_url("administrator/jadwal")?>">
                         <span class="widget-icon elusive icon-calendar"></span>
                         <strong>Jadwal</strong>
                     </a>
                 </div>
                 <!-- /Widget block -->
                 <div class="col-sm-3 col-xs-6">
-                    <a class="data-block widget-block" href="index.html#">
+                    <a class="data-block widget-block" href="<?= base_url("administrator/profile")?>">
                         <span class="widget-icon elusive icon-wrench"></span>
                         <strong>Pengaturan</strong>
                     </a>

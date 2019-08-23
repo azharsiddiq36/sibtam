@@ -74,11 +74,11 @@
 
                 <!-- User profile info -->
                 <figcaption>
-                    <strong><a href="user-profile.html">John Pixel</a></strong>
+                    <strong><a href="<?= base_url("administrator/profile")?>">John Pixel</a></strong>
                     <ul>
-                        <li><a href="index.html#" title="Message inbox">inbox</a></li>
-                        <li><a href="index.html#" title="Account settings">settings</a></li>
-                        <li><a href="login.html" title="Logout">logout</a></li>
+                        <li><a href="<?= base_url("administrator/profile")?>" title="Message inbox">inbox</a></li>
+                        <li><a href="<?= base_url("administrator/profile")?>" title="Account settings">settings</a></li>
+                        <li><a href="<?= base_url("administrator/logout")?>" title="Logout">logout</a></li>
                     </ul>
                 </figcaption>
                 <!-- /User profile info -->
@@ -127,13 +127,13 @@
                     <li class="dropdown">
                         <a href="index.html#" class="dropdown-toggle" data-toggle="dropdown"><span class="elusive icon-file"></span> Extra <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="eshop.html"><span class="elusive icon-file"></span> Postingan</a></li>
-                            <li><a href="add-item.html"><span class="elusive icon-file"></span> Kontes</a></li>
+                            <li><a href="<?= base_url("administrator/postingan")?>"><span class="elusive icon-file"></span> Postingan</a></li>
+                            <li><a href="<?= base_url("administrator/kontes")?>"><span class="elusive icon-file"></span> Kontes</a></li>
                         </ul>
                     </li>
                     <!-- /Dropdown navigation with multi-level dropdown -->
                     <li>
-                        <a href="docs/index.html"><span class="elusive icon-info-sign"></span> Penjadwalan</a>
+                        <a href="<?= base_url("administrator/jadwal")?>"><span class="elusive icon-info-sign"></span> Penjadwalan</a>
                     </li>
                 </ul>
                 <!-- /Navigation items -->
