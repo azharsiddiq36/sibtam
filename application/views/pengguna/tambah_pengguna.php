@@ -5,7 +5,7 @@
         <article class="col-sm-9">
             <div class="dark data-block">
                 <header>
-                    <h2><span class="elusive icon-check"></span> Form Tambah Pengguna</h2>
+                    <h2><span class="elusive icon-check"></span> <?= $title?></h2>
                 </header>
                 <section>
 
@@ -53,9 +53,9 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-lg-12" for="exampleInputEmail1">Nomor</label>
+                            <label class="col-lg-12">Nomor</label>
                             <div class="col-lg-8">
-                                <input required type="email" class="form-control" name = "pengguna_nomor" id="exampleInputEmail1" placeholder="Nomor Handphone">
+                                <input required type="number" class="form-control" name = "pengguna_nomor" id="exampleInputEmail1" placeholder="Nomor Handphone">
                                 <p class="help-block">Example block-level help text here.</p>
                             </div>
                         </div>

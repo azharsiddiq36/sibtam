@@ -49,9 +49,9 @@
                                         }
 
                                         ?></td>
-                                    <td><button class="btn btn-primary btn-sm"><span class="elusive icon-eye-open"></span></button>
-                                        <button class="btn btn-warning btn-sm"><span class="elusive icon-pencil"></span></button>
-                                        <button class="btn btn-danger btn-sm"><span class="elusive icon-remove"></span></button></td>
+                                    <td><a href="" class="btn btn-primary btn-sm"><span class="elusive icon-eye-open"></span></a>
+                                        <a href="<?= base_url("administrator/pengguna/edit/".$key->pengguna_id)?>" class="btn btn-warning btn-sm"><span class="elusive icon-pencil"></span></a>
+                                        <a onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')" href="<?= base_url("administrator/pengguna/hapus/".$key->pengguna_id)?>"class="btn btn-danger btn-sm"><span class="elusive icon-remove"></span></a></td>
                                 </tr>
                                 <?php
                                 $no++;

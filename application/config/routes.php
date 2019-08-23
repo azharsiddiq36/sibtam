@@ -6,8 +6,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	$route['administrator/dashboard'] = 'PenggunaController';
     $route['administrator/pengguna'] = 'PenggunaController/daftar';
     $route['administrator/pengguna/tambah'] = 'PenggunaController/tambah';
-    $route['edit_pengguna/(:any)'] = 'PenggunaController/edit/$1';
-    $route['delete_pengguna/(:any)'] = 'PenggunaController/delete/$1';
+    $route['administrator/pengguna/edit/(:any)'] = 'PenggunaController/edit/$1';
+    $route['administrator/pengguna/hapus/(:any)'] = 'PenggunaController/delete/$1';
     $route['detail_pengguna'] = 'PenggunaController/detail';
 
     //Provider

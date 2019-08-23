@@ -27,7 +27,7 @@ class PenggunaController extends GLOBAL_Controller
         if(isset($_POST['submit'])){
             $nama = parent::post("pengguna_nama");
             $password = parent::post("pengguna_password");
-            $jk = parent::post("jk");
+            $jk = parent::post("pengguna_jk");
             $email = parent::post("pengguna_email");
             $hak_akses = parent::post("pengguna_hak_akses");
             $alamat = parent::post("pengguna_alamat");
@@ -37,26 +37,33 @@ class PenggunaController extends GLOBAL_Controller
                 $data = array(
                     "pengguna_status"=>"nonaktif",
                     "pengguna_foto"=>"user.png",
+                    "pengguna_latitude"=>"0",
+                    "pengguna_longitude"=>"0",
+                    "pengguna_foto_ktp"=>"belum",
+                    "pengguna_provinsi"=>"umum",
+                    "pengguna_kabupaten"=>"umum",
+                    "pengguna_kecamatan"=>"umum",
+                    "pengguna_desa"=>"umum",
                     "pengguna_nama"=>$nama,
                     "pengguna_password"=>md5($password),
                     "pengguna_email" =>$email,
                     "pengguna_nomor" => $nomor,
                     "pengguna_alamat" =>$alamat,
                     "pengguna_hak_akses" =>$hak_akses,
-                    "pengguna_jk"=>$jk
+                    "pengguna_jenis_kelamin"=>$jk
                 );
                 parent::model("PenggunaModel")->post_pengguna($data);
                 parent::alert("msg","Berhasil Menambahkan Data !!!");
                 redirect("administrator/pengguna");
             }
             else{
-                $data['title'] = "Pengguna";
+                $data['title'] = "Form Tambah Pengguna";
                 parent::alert("msg","Email Telah Tedaftar !!!");
                 parent::template('pengguna/tambah_pengguna',$data);
             }
         }
         else{
-            $data['title'] = "Pengguna";
+            $data['title'] = "Form Tambah Pengguna";
             parent::template('pengguna/tambah_pengguna',$data);
         }
     }
@@ -136,7 +143,7 @@ class PenggunaController extends GLOBAL_Controller
     }
     public function delete(){
         $data['title'] = "Pengguna";
-        $id = $this->uri->segment(2);
+        $id = $this->uri->segment(4);
         $data = array("pengguna_id"=>$id);
         parent::model("PenggunaModel")->deletePengguna($data);
         parent::alert("msg","Berhasil Menghapus Data !!!");
