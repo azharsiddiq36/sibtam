@@ -43,7 +43,7 @@
 					if ($existsData['pengguna_hak_akses'] == "administrator" ||
                         $existsData['pengguna_hak_akses'] == "karyawan" ||
                         $existsData['pengguna_hak_akses'] == "ketua" ){
-                        redirect(site_url('dashboard'));
+                        redirect(site_url('administrator/dashboard'));
                     }
                     else{
                         parent::alert('msg','Hak Akses Kamu Tidak Terdaftar');

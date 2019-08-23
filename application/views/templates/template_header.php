@@ -106,7 +106,7 @@
 
                     <!-- Active navigation items -->
                     <li class="active">
-                        <a href="index.html"><span class="elusive icon-home"></span> Dashboard</a>
+                        <a href="<?= base_url('administrator/dashboard')?>"><span class="elusive icon-home"></span> Dashboard</a>
                     </li>
                     <!-- /Active navigation items -->
 
@@ -115,10 +115,10 @@
                         <a href="index.html#" class="dropdown-toggle" data-toggle="dropdown"><span class="elusive icon-asl"></span> Components <b class="caret"></b></a>
                         <span class="badge">23</span>
                         <ul class="dropdown-menu">
-                            <li><a href="tables.html"><span class="elusive icon-th-list"></span> Pengguna</a></li>
-                            <li><a href="forms.html"><span class="elusive icon-align-left"></span> Kategori</a></li>
-                            <li><a href="calendar.html"><span class="elusive icon-calendar"></span> Kucing</a></li>
-                            <li><a href="charts.html"><span class="elusive icon-graph"></span> Toko(Petshop)</a></li>
+                            <li><a href="<?= base_url('administrator/pengguna')?>"><span class="elusive icon-th-list"></span> Pengguna</a></li>
+                            <li><a href="<?= base_url('administrator/kategori')?>"><span class="elusive icon-align-left"></span> Kategori</a></li>
+                            <li><a href="<?= base_url('administrator/kucing')?>"><span class="elusive icon-calendar"></span> Kucing</a></li>
+                            <li><a href="<?= base_url('administrator/toko')?>"><span class="elusive icon-graph"></span> Toko(Petshop)</a></li>
                         </ul>
                     </li>
                     <!-- /Dropdown navigation items -->

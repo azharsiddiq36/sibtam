@@ -40,7 +40,7 @@
     <!-- /Login header -->
 
     <!-- Login form -->
-    <form method="post" action="<?= base_url("dashboard")?>">
+    <form method="post" action="<?= base_url("administrator/dashboard")?>">
         <div class="form-group">
             <div class="input-group">
                 <span class="input-group-addon"><span class="elusive icon-user"></span></span>

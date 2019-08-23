@@ -12,17 +12,13 @@ class PenggunaController extends GLOBAL_Controller
     {
         parent::__construct();
         $this->load->model('PenggunaModel');
-        $this->load->model('KiosModel');
-        $this->load->model('PaketModel');
-        $this->load->model('ProviderModel');
-        $this->load->model('TransaksiModel');
     }
     public function index(){
         $data['title'] = "Dashboard";
         parent::template('dashboard/index',$data);
     }
     public function daftar(){
-        $data['title'] = "Pengguna";
+        $data['title'] = "Tabel Pengguna";
         $data['data'] = parent::model('PenggunaModel')->get_pengguna()->result();
         parent::template('pengguna/index',$data);
     }
@@ -51,7 +47,7 @@ class PenggunaController extends GLOBAL_Controller
                 );
                 parent::model("PenggunaModel")->post_pengguna($data);
                 parent::alert("msg","Berhasil Menambahkan Data !!!");
-                redirect("pengguna");
+                redirect("administrator/pengguna");
             }
             else{
                 $data['title'] = "Pengguna";
@@ -121,7 +117,7 @@ class PenggunaController extends GLOBAL_Controller
             );
             parent::model("PenggunaModel")->editPengguna($id,$data);
             parent::alert("msg","Berhasil Memperbarui Data !!!");
-            redirect("pengguna");
+            redirect("administrator/pengguna");
         }
         else{
             $data['title'] = "Pengguna";
@@ -144,6 +140,6 @@ class PenggunaController extends GLOBAL_Controller
         $data = array("pengguna_id"=>$id);
         parent::model("PenggunaModel")->deletePengguna($data);
         parent::alert("msg","Berhasil Menghapus Data !!!");
-        redirect("pengguna");
+        redirect("administrator/pengguna");
     }
 }
