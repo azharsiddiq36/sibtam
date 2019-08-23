@@ -23,6 +23,7 @@
 
 <!-- Bootstrap scripts -->
 <script src="<?= base_url()?>assets/js/bootstrap/bootstrap.min.js"></script>
+<script src="<?= base_url()?>assets/js/app.js"></script>
 <script src="<?= base_url()?>assets/js/plugins/flot/jquery.flot.min.js"></script>
 <script src="<?= base_url()?>assets/js/plugins/flot/jquery.flot.resize.min.js"></script>
 <script src="<?= base_url()?>assets/js/plugins/dataTables/jquery.datatables.min.js"></script>

@@ -4,6 +4,13 @@
     <section class="container" role="main">
         <div class="row">
             <!-- Data block -->
+            <?php if ($this->session->flashdata('msg')){
+                ?>
+                <div class="auto-hide alert alert-success" role="alert">
+                    <strong>Selamat !</strong> <?= $this->session->flashdata('msg')?>
+                </div>
+                <?php
+            }?>
             <article class="col-sm-12">
                 <div class="dark data-block">
                     <header>

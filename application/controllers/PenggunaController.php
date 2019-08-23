@@ -106,10 +106,10 @@ class PenggunaController extends GLOBAL_Controller
 
     }
     public function edit(){
-        $id = $this->uri->segment(2);
+        $id = $this->uri->segment(4);
         if(isset($_POST['submit'])){
             $nama = parent::post("pengguna_nama");
-            $jk = parent::post("jk");
+            $jk = parent::post("pengguna_jk");
             $email = parent::post("pengguna_email");
             $hak_akses = parent::post("pengguna_hak_akses");
             $alamat = parent::post("pengguna_alamat");
@@ -120,16 +120,16 @@ class PenggunaController extends GLOBAL_Controller
                 "pengguna_nomor" => $nomor,
                 "pengguna_alamat" =>$alamat,
                 "pengguna_hak_akses" =>$hak_akses,
-                "pengguna_jk"=>$jk
+                "pengguna_jenis_kelamin"=>$jk
             );
             parent::model("PenggunaModel")->editPengguna($id,$data);
             parent::alert("msg","Berhasil Memperbarui Data !!!");
             redirect("administrator/pengguna");
         }
         else{
-            $data['title'] = "Pengguna";
+            $data['title'] = "Form Edit Pengguna";
             $param = array('pengguna_id'=>$id);
-            $data['akses'] = array("administrator","ketua","karyawan");
+            $data['akses'] = array("administrator","pengguna");
             $data['row'] = parent::model("PenggunaModel")->getOne($param);
             parent::template('pengguna/edit_pengguna',$data);
         }

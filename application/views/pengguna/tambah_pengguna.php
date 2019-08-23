@@ -8,7 +8,13 @@
                     <h2><span class="elusive icon-check"></span> <?= $title?></h2>
                 </header>
                 <section>
-
+                    <?php if ($this->session->flashdata('msg')){
+                        ?>
+                        <div class="alert alert-warning" role="alert">
+                            <strong>Maaf !</strong> <?= $this->session->flashdata('msg')?>
+                        </div>
+                        <?php
+                    }?>
                     <!-- Form validation demo -->
                     <form role="form" action="<?= base_url('administrator/pengguna/tambah')?>" method="post">
                         <div class="form-group row">
