@@ -16,7 +16,7 @@
                     <header>
                         <h2><?= $title?></h2>
                         <ul class="data-header-actions">
-                            <li><a href="<?= base_url('administrator/pengguna/tambah')?>">Tambah Pengguna</a></li>
+                            <li><a href="<?= base_url('administrator/kontes/tambah')?>">Tambah Kontes</a></li>
                         </ul>
                     </header>
                     <section>
@@ -25,8 +25,12 @@
                             <tr>
                                 <th>No</th>
                                 <th>Nama</th>
-                                <th>Email</th>
-                                <th>Hak Akses</th>
+                                <th>Provinsi</th>
+                                <th>Kabupaten</th>
+                                <th>Kecamatan</th>
+                                <th>Desa</th>
+                                <th>Tanggal</th>
+                                <th>Kuota</th>
                                 <th>Nomor</th>
                                 <th>Status</th>
                                 <th>Aksi</th>
@@ -39,26 +43,35 @@
                                 ?>
                                 <tr class="odd gradeX">
                                     <td><?= $no?></td>
-                                    <td><?= $key->pengguna_nama?></td>
-                                    <td><?= $key->pengguna_email?></td>
-                                    <td><?= $key->pengguna_hak_akses?></td>
-                                    <td><?= $key->pengguna_nomor?></td>
+                                    <td><?= $key->kontes_nama?></td>
+                                    <td><?= $key->kontes_provinsi?></td>
+                                    <td><?= $key->kontes_kabupaten?></td>
+                                    <td><?= $key->kontes_kecamatan?></td>
+                                    <td><?= $key->kontes_desa?></td>
+                                    <td><?= $key->kontes_tanggal_mulai?></td>
+                                    <td><?= $key->kontes_jumlah_pemesan."/".$key->kontes_kuota?></td>
+                                    <td><?= $key->kontes_nomor?></td>
                                     <td><?php
-                                        if ($key->pengguna_status == 'aktif'){
+                                        if ($key->kontes_status == 'selesai'){
                                             ?>
-                                            <span class="label label-success"><?= $key->pengguna_status?></span>
+                                            <span class="label label-success"><?= $key->kontes_status?></span>
                                         <?php
+                                        }
+                                        else if ($key->kontes_status == 'menunggu'){
+                                            ?>
+                                            <span class="label label-warning"><?= $key->kontes_status?></span>
+                                            <?php
                                         }
                                         else{
                                             ?>
-                                            <span class="label label-danger"><?= $key->pengguna_status?></span>
+                                            <span class="label label-primary"><?= $key->kontes_status?></span>
                                         <?php
                                         }
 
                                         ?></td>
                                     <td><a href="" class="btn btn-primary btn-sm"><span class="elusive icon-eye-open"></span></a>
-                                        <a href="<?= base_url("administrator/pengguna/edit/".$key->pengguna_id)?>" class="btn btn-warning btn-sm"><span class="elusive icon-pencil"></span></a>
-                                        <a onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')" href="<?= base_url("administrator/pengguna/hapus/".$key->pengguna_id)?>"class="btn btn-danger btn-sm"><span class="elusive icon-remove"></span></a></td>
+                                        <a href="<?= base_url("administrator/kontes/edit/".$key->kontes_id)?>" class="btn btn-warning btn-sm"><span class="elusive icon-pencil"></span></a>
+                                        <a onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')" href="<?= base_url("administrator/kontes/hapus/".$key->kontes_id)?>"class="btn btn-danger btn-sm"><span class="elusive icon-remove"></span></a></td>
                                 </tr>
                                 <?php
                                 $no++;
