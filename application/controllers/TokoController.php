@@ -32,8 +32,6 @@ class TokoController extends GLOBAL_Controller
             $hak_akses = parent::post("toko_hak_akses");
             $alamat = parent::post("toko_alamat");
             $nomor = parent::post("toko_nomor");
-            $data = array("toko_email"=>$email);
-            if (parent::model("TokoModel")->checkMail($data)->num_rows()<1){
                 $data = array(
                     "toko_status"=>"nonaktif",
                     "toko_foto"=>"user.png",
@@ -55,55 +53,12 @@ class TokoController extends GLOBAL_Controller
                 parent::model("TokoModel")->post_toko($data);
                 parent::alert("msg","Berhasil Menambahkan Data !!!");
                 redirect("administrator/toko");
-            }
-            else{
-                $data['title'] = "Form Tambah Toko";
-                parent::alert("msg","Email Telah Tedaftar !!!");
-                parent::template('toko/tambah_toko',$data);
-            }
+
         }
         else{
             $data['title'] = "Form Tambah Toko";
-            parent::template('toko/tambah_toko',$data);
+            parent::template('toko/tambah',$data);
         }
-    }
-    public function profile(){
-        $data['title'] = "Profile Saya";
-        $param = array('toko_id'=>$this->session->userdata['toko_id']);
-        $data['data'] =  parent::model("TokoModel")->getOne($param);
-        if (isset($_POST['submit'])){
-            $nama = parent::post("nama");
-            $nomor = parent::post("nomor");
-            $email = parent::post("email");
-            $password = parent::post("password");
-            $alamat = parent::post("alamat");
-            $param = null;
-            if($password == $data['data']['toko_password']){
-                $param = array(
-                    "toko_nama"=>$nama,
-                    "toko_email" =>$email,
-                    "toko_nomor" => $nomor,
-                    "toko_alamat" =>$alamat,
-                  );
-            }
-            else{
-                $param = array(
-                    "toko_nama"=>$nama,
-                    "toko_email" =>$email,
-                    "toko_nomor" => $nomor,
-                    "toko_alamat" =>$alamat,
-                    "toko_password"=>md5($password)
-                );
-            }
-            parent::model("TokoModel")->editToko($this->session->userdata['toko_id'],$param);
-            parent::alert("msg","Berhasil Merubah Profile");
-            redirect('profile');
-
-        }
-        else{
-            parent::template('toko/profile',$data);
-        }
-
     }
     public function edit(){
         $id = $this->uri->segment(4);
@@ -131,7 +86,7 @@ class TokoController extends GLOBAL_Controller
             $param = array('toko_id'=>$id);
             $data['akses'] = array("administrator","toko");
             $data['row'] = parent::model("TokoModel")->getOne($param);
-            parent::template('toko/edit_toko',$data);
+            parent::template('toko/edit',$data);
         }
     }
     public function detail(){
