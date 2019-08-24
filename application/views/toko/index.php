@@ -54,8 +54,8 @@
                                         }
                                         ?>"><?= $key->toko_status?></span></td>
                                     <td><a href="<?= base_url("administrator/toko/edit/".$key->toko_id)?>"class="btn btn-primary btn-sm"><span class="elusive icon-eye-open"></span></a>
-                                        <a onclick="return confirm('Apakah anda yakin mengaktifkan toko ini?')" href="<?= base_url("administrator/toko/edit/".$key->toko_id)?>"class="btn btn-success btn-sm"><span class="elusive icon-ok"></span></a>
-                                        <a onclick="return confirm('Apakah anda yakin ingin menutup toko ini?')" href="<?= base_url("administrator/toko/hapus/".$key->toko_id)?>"class="btn btn-danger btn-sm"><span class="elusive icon-remove"></span></a></td>
+                                        <a onclick="return confirm('Apakah anda yakin mengaktifkan toko ini?')" href="<?= base_url("administrator/toko/aktif/".$key->toko_id)?>"class="btn btn-success btn-sm"><span class="elusive icon-ok"></span></a>
+                                        <a onclick="return confirm('Apakah anda yakin ingin menutup toko ini?')" href="<?= base_url("administrator/toko/nonaktif/".$key->toko_id)?>"class="btn btn-danger btn-sm"><span class="elusive icon-remove"></span></a></td>
                                 </tr>
                                 <?php
                                 $no++;

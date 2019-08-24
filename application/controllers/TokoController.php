@@ -60,48 +60,26 @@ class TokoController extends GLOBAL_Controller
             parent::template('toko/tambah',$data);
         }
     }
-    public function edit(){
+    public function aktif(){
         $id = $this->uri->segment(4);
-        if(isset($_POST['submit'])){
-            $nama = parent::post("toko_nama");
-            $jk = parent::post("toko_jk");
-            $email = parent::post("toko_email");
-            $hak_akses = parent::post("toko_hak_akses");
-            $alamat = parent::post("toko_alamat");
-            $nomor = parent::post("toko_nomor");
+
             $data = array(
-                "toko_nama"=>$nama,
-                "toko_email" =>$email,
-                "toko_nomor" => $nomor,
-                "toko_alamat" =>$alamat,
-                "toko_hak_akses" =>$hak_akses,
-                "toko_jenis_kelamin"=>$jk
+                "toko_status"=>"aktif"
             );
             parent::model("TokoModel")->editToko($id,$data);
-            parent::alert("msg","Berhasil Memperbarui Data !!!");
+            parent::alert("msg","Berhasil Mengaktifkan Toko !!!");
             redirect("administrator/toko");
-        }
-        else{
-            $data['title'] = "Form Edit Toko";
-            $param = array('toko_id'=>$id);
-            $data['akses'] = array("administrator","toko");
-            $data['row'] = parent::model("TokoModel")->getOne($param);
-            parent::template('toko/edit',$data);
-        }
-    }
-    public function detail(){
-        $id = parent::post("toko_id");
 
-        $param = array("toko_id"=>$id);
-        $isi = parent::model("TokoModel")->getOne($param);
-        echo json_encode($isi);
+
     }
-    public function delete(){
+    public function nonaktif(){
         $data['title'] = "Toko";
         $id = $this->uri->segment(4);
-        $data = array("toko_id"=>$id);
-        parent::model("TokoModel")->deleteToko($data);
-        parent::alert("msg","Berhasil Menghapus Data !!!");
+        $data = array(
+            "toko_status"=>"nonaktif"
+        );
+        parent::model("TokoModel")->editToko($id,$data);
+        parent::alert("msg","Berhasil Menonaktifkan Toko !!!");
         redirect("administrator/toko");
     }
 }

@@ -38,8 +38,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     //Toko
     $route['administrator/toko'] = 'TokoController/daftar';
     $route['administrator/toko/tambah'] = 'TokoController/tambah';
-    $route['administrator/toko/edit/(:any)'] = 'TokoController/edit/$1';
-    $route['administrator/toko/hapus/(:any)'] = 'TokoController/delete/$1';
+    $route['administrator/toko/aktif/(:any)'] = 'TokoController/aktif/$1';
+    $route['administrator/toko/nonaktif/(:any)'] = 'TokoController/nonaktif/$1';
 
 	// authentication
 	$route['administrator/logout'] = 'AuthController/logout';
