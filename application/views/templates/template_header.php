@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Dashboard | Sangoma Bootstrap Admin Template</title>
+    <title>CatMeet</title>
     <meta name="description" content="">
     <meta name="author" content="Walking Pixels | www.walkingpixels.com">
     <meta name="robots" content="index, follow">
