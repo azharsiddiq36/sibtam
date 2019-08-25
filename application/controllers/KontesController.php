@@ -105,34 +105,14 @@ class KontesController extends GLOBAL_Controller
         }
 
     }
-    public function edit(){
+    public function accept(){
         $id = $this->uri->segment(4);
-        if(isset($_POST['submit'])){
-            $nama = parent::post("kontes_nama");
-            $jk = parent::post("kontes_jk");
-            $email = parent::post("kontes_email");
-            $hak_akses = parent::post("kontes_hak_akses");
-            $alamat = parent::post("kontes_alamat");
-            $nomor = parent::post("kontes_nomor");
             $data = array(
-                "kontes_nama"=>$nama,
-                "kontes_email" =>$email,
-                "kontes_nomor" => $nomor,
-                "kontes_alamat" =>$alamat,
-                "kontes_hak_akses" =>$hak_akses,
-                "kontes_jenis_kelamin"=>$jk
+                "kontes_status"=>"disetujui"
             );
             parent::model("KontesModel")->editKontes($id,$data);
-            parent::alert("msg","Berhasil Memperbarui Data !!!");
+            parent::alert("msg","Berhasil Menyetujui Kontes !!!");
             redirect("administrator/kontes");
-        }
-        else{
-            $data['title'] = "Form Edit Kontes";
-            $param = array('kontes_id'=>$id);
-            $data['akses'] = array("administrator","kontes");
-            $data['row'] = parent::model("KontesModel")->getOne($param);
-            parent::template('kontes/edit_kontes',$data);
-        }
     }
     public function detail(){
         $id = parent::post("kontes_id");
@@ -141,12 +121,13 @@ class KontesController extends GLOBAL_Controller
         $isi = parent::model("KontesModel")->getOne($param);
         echo json_encode($isi);
     }
-    public function delete(){
-        $data['title'] = "Kontes";
+    public function tolak(){
         $id = $this->uri->segment(4);
-        $data = array("kontes_id"=>$id);
-        parent::model("KontesModel")->deleteKontes($data);
-        parent::alert("msg","Berhasil Menghapus Data !!!");
+        $data = array(
+            "kontes_status"=>"ditolak"
+        );
+        parent::model("KontesModel")->editKontes($id,$data);
+        parent::alert("msg","Berhasil Menolak Kontes !!!");
         redirect("administrator/kontes");
     }
 }

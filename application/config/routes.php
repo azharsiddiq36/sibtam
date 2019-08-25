@@ -23,8 +23,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     //Kontes
     $route['administrator/kontes'] = 'KontesController/daftar';
     $route['administrator/kontes/tambah'] = 'KontesController/tambah';
-    $route['administrator/kontes/edit/(:any)'] = 'KontesController/edit/$1';
-    $route['administrator/kontes/hapus/(:any)'] = 'KontesController/delete/$1';
+    $route['administrator/kontes/accept/(:any)'] = 'KontesController/accept/$1';
+    $route['administrator/kontes/tolak/(:any)'] = 'KontesController/tolak/$1';
     //Kucing
     $route['administrator/kucing'] = 'KucingController/daftar';
     $route['administrator/kucing/tambah'] = 'KucingController/tambah';

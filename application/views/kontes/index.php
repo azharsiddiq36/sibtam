@@ -62,6 +62,11 @@
                                             <span class="label label-warning"><?= $key->kontes_status?></span>
                                             <?php
                                         }
+                                        else if ($key->kontes_status == 'ditolak'){
+                                            ?>
+                                            <span class="label label-danger"><?= $key->kontes_status?></span>
+                                            <?php
+                                        }
                                         else{
                                             ?>
                                             <span class="label label-primary"><?= $key->kontes_status?></span>
@@ -70,8 +75,8 @@
 
                                         ?></td>
                                     <td><a href="" class="btn btn-primary btn-sm"><span class="elusive icon-eye-open"></span></a>
-                                        <a href="<?= base_url("administrator/kontes/edit/".$key->kontes_id)?>" class="btn btn-warning btn-sm"><span class="elusive icon-pencil"></span></a>
-                                        <a onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')" href="<?= base_url("administrator/kontes/hapus/".$key->kontes_id)?>"class="btn btn-danger btn-sm"><span class="elusive icon-remove"></span></a></td>
+                                        <a href="<?= base_url("administrator/kontes/accept/".$key->kontes_id)?>" onclick="return confirm('Apakah anda yakin ingin Menyetujui Kontes ini?')" class="btn btn-success btn-sm"><span class="elusive icon-ok"></span></a>
+                                        <a onclick="return confirm('Apakah anda yakin ingin Menolak Kontes ini?')" href="<?= base_url("administrator/kontes/tolak/".$key->kontes_id)?>"class="btn btn-danger btn-sm"><span class="elusive icon-remove"></span></a></td>
                                 </tr>
                                 <?php
                                 $no++;
