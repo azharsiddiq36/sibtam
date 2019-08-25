@@ -43,7 +43,6 @@
                                     <td><?= $key->postingan_tanggal ?></td>
                                     <td><?php
                                         if (strlen($key->postingan_deskripsi) < 40) {
-
                                             echo $key->postingan_deskripsi;
                                         } else {
                                             echo substr($key->postingan_deskripsi, 0, 40) . " <b>.....</b>";
