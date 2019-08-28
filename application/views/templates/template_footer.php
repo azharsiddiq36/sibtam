@@ -1,4 +1,9 @@
 
+
+<!-- END dashboard main content-->
+<!-- START dashboard sidebar-->
+
+
 </div>
 </div>
 <!-- END Page content-->
@@ -13,6 +18,7 @@
 <!-- END Main wrapper-->
 <!-- START Scripts-->
 <!-- Main vendor Scripts-->
+<script src="<?= base_url()?>assets/js/custome.js"></script>
 <script src="<?= base_url()?>assets/vendor/jquery/jquery.min.js"></script>
 <script src="<?= base_url()?>assets/vendor/bootstrap/js/bootstrap.min.js"></script>
 <!-- Plugins-->
@@ -40,7 +46,12 @@
 <!--[if lt IE 8]><script src=<?= base_url()?>"assets/js/excanvas.min.js"></script><![endif]-->
 <!-- END Page Custom Script-->
 <!-- App Main-->
+<script src="<?= base_url()?>assets/vendor/parsley/parsley.min.js"></script>
 <script src="<?= base_url()?>assets/js/app.js"></script>
+<script src="<?= base_url()?>assets/vendor/datatable/media/js/jquery.dataTables.min.js"></script>
+<script src="<?= base_url()?>assets/vendor/datatable/extensions/datatable-bootstrap/js/dataTables.bootstrap.js"></script>
+<script src="<?= base_url()?>assets/vendor/datatable/extensions/datatable-bootstrap/js/dataTables.bootstrapPagination.js"></script>
+<script src="<?= base_url()?>assets/vendor/datatable/extensions/ColVis/js/dataTables.colVis.min.js"></script>
 <!-- END Scripts-->
 </body>
 

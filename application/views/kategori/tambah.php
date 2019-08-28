@@ -1,37 +1,32 @@
-<section class="container" role="main">
-
-    <!-- Grid row -->
-    <div class="row">
-        <article class="col-sm-9">
-            <div class="dark data-block">
-                <header>
-                    <h2><span class="elusive icon-check"></span> <?= $title?></h2>
-                </header>
-                <section>
-                    <?php if ($this->session->flashdata('msg')){
-                        ?>
-                        <div class="alert alert-warning" role="alert">
-                            <strong>Maaf !</strong> <?= $this->session->flashdata('msg')?>
-                        </div>
-                        <?php
-                    }?>
-                    <!-- Form validation demo -->
-                    <form role="form" action="<?= base_url('administrator/kategori/tambah')?>" method="post">
-                        <div class="form-group row">
-                            <label class="col-lg-12">Nama</label>
-                            <div class="col-lg-8">
-                                <input required type="text" name="kategori_nama" class="form-control" id="exampleInputEmail1" placeholder="Nama">
-                                <p class="help-block">Example block-level help text here.</p>
+<h3><?= $title?>
+    <br>
+    <small>Sistem Informasi Tanaman Obat</small>
+</h3>
+<div class="row">
+    <div class="col-md-12">
+        <form action="<?= base_url('administrator/kategori/tambah')?>" method="post" data-parsley-validate="" novalidate="" class="form-horizontal">
+            <!-- START panel-->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="panel-title">Fields validation</div>
+                </div>
+                <div class="panel-body">
+                    <fieldset>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Nama</label>
+                            <div class="col-sm-6">
+                                <input type="text" name="kategori_nama" required="required" placeholder="nama" class="form-control">
                             </div>
                         </div>
-                        <button type="submit" name = 'submit' class="btn btn-lg btn-default">Submit</button>
-                    </form>
-                    <!-- /Form validation demo -->
+                    </fieldset>
 
-                </section>
+                </div>
+
+                <div class="panel-footer text-center">
+                    <button type="submit" class="btn btn-info" name="submit">Tambahkan</button>
+                </div>
             </div>
-        </article>
-
-        <!-- Data block -->
+            <!-- END panel-->
+        </form>
     </div>
-</section>
+</div>

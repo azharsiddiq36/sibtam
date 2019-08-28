@@ -27,30 +27,18 @@ class PenggunaController extends GLOBAL_Controller
         if(isset($_POST['submit'])){
             $nama = parent::post("pengguna_nama");
             $password = parent::post("pengguna_password");
-            $jk = parent::post("pengguna_jk");
             $email = parent::post("pengguna_email");
-            $hak_akses = parent::post("pengguna_hak_akses");
             $alamat = parent::post("pengguna_alamat");
             $nomor = parent::post("pengguna_nomor");
             $data = array("pengguna_email"=>$email);
             if (parent::model("PenggunaModel")->checkMail($data)->num_rows()<1){
                 $data = array(
-                    "pengguna_status"=>"nonaktif",
-                    "pengguna_foto"=>"user.png",
-                    "pengguna_latitude"=>"0",
-                    "pengguna_longitude"=>"0",
-                    "pengguna_foto_ktp"=>"belum",
-                    "pengguna_provinsi"=>"umum",
-                    "pengguna_kabupaten"=>"umum",
-                    "pengguna_kecamatan"=>"umum",
-                    "pengguna_desa"=>"umum",
                     "pengguna_nama"=>$nama,
                     "pengguna_password"=>md5($password),
                     "pengguna_email" =>$email,
                     "pengguna_nomor" => $nomor,
                     "pengguna_alamat" =>$alamat,
-                    "pengguna_hak_akses" =>$hak_akses,
-                    "pengguna_jenis_kelamin"=>$jk
+                    "pengguna_hak_akses" =>'administrator',
                 );
                 parent::model("PenggunaModel")->post_pengguna($data);
                 parent::alert("msg","Berhasil Menambahkan Data !!!");
@@ -59,12 +47,12 @@ class PenggunaController extends GLOBAL_Controller
             else{
                 $data['title'] = "Form Tambah Pengguna";
                 parent::alert("msg","Email Telah Tedaftar !!!");
-                parent::template('pengguna/tambah_pengguna',$data);
+                parent::template('pengguna/tambah',$data);
             }
         }
         else{
             $data['title'] = "Form Tambah Pengguna";
-            parent::template('pengguna/tambah_pengguna',$data);
+            parent::template('pengguna/tambah',$data);
         }
     }
     public function profile(){
@@ -120,9 +108,8 @@ class PenggunaController extends GLOBAL_Controller
         $id = $this->uri->segment(4);
         if(isset($_POST['submit'])){
             $nama = parent::post("pengguna_nama");
-            $jk = parent::post("pengguna_jk");
+
             $email = parent::post("pengguna_email");
-            $hak_akses = parent::post("pengguna_hak_akses");
             $alamat = parent::post("pengguna_alamat");
             $nomor = parent::post("pengguna_nomor");
             $data = array(
@@ -130,8 +117,6 @@ class PenggunaController extends GLOBAL_Controller
                 "pengguna_email" =>$email,
                 "pengguna_nomor" => $nomor,
                 "pengguna_alamat" =>$alamat,
-                "pengguna_hak_akses" =>$hak_akses,
-                "pengguna_jenis_kelamin"=>$jk
             );
             parent::model("PenggunaModel")->editPengguna($id,$data);
             parent::alert("msg","Berhasil Memperbarui Data !!!");
@@ -142,7 +127,7 @@ class PenggunaController extends GLOBAL_Controller
             $param = array('pengguna_id'=>$id);
             $data['akses'] = array("administrator","pengguna");
             $data['row'] = parent::model("PenggunaModel")->getOne($param);
-            parent::template('pengguna/edit_pengguna',$data);
+            parent::template('pengguna/edit',$data);
         }
     }
     public function detail(){

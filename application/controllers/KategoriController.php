@@ -26,12 +26,17 @@ class KategoriController extends GLOBAL_Controller
     public function tambah(){
         if(isset($_POST['submit'])){
             $nama = parent::post("kategori_nama");
-             $data = array(
-                "kategori_nama"=>$nama,
-            );
-            parent::model("KategoriModel")->post_kategori($data);
-            parent::alert("msg","Berhasil Menambahkan Data !!!");
-            redirect("administrator/kategori");
+
+
+
+
+                $data = array(
+                    "kategori_nama"=>$nama,
+                );
+                parent::model("KategoriModel")->post_kategori($data);
+                parent::alert("msg","Berhasil Menambahkan Data !!!");
+                redirect("administrator/kategori");
+
         }
         else{
             $data['title'] = "Form Tambah Kategori";
@@ -43,9 +48,9 @@ class KategoriController extends GLOBAL_Controller
         if(isset($_POST['submit'])){
             $nama = parent::post("kategori_nama");
 
+
             $data = array(
                 "kategori_nama"=>$nama,
-
             );
             parent::model("KategoriModel")->editKategori($id,$data);
             parent::alert("msg","Berhasil Memperbarui Data !!!");

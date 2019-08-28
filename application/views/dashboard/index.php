@@ -1,149 +1,154 @@
-<section class="container" role="main">
 
-    <!-- Grid row -->
-    <div class="row">
+<h3><?= $title?>
+    <br>
+    <small>Sistem Informasi Tanaman Obat</small>
+</h3>
+<div data-toggle="notify" data-onload data-message="&lt;b&gt;Selamat Datang!&lt;/b&gt;." data-options="{&quot;status&quot;:&quot;success&quot;, &quot;pos&quot;:&quot;top-right&quot;}"
+     class="hidden-xs"></div>
+<section class="col-md-9">
+<div class="row">
 
-        <!-- Multi-level scaffolding example -->
-        <div class="col-sm-8">
-
-            <!-- Grid row -->
-            <div class="row">
-                <!-- Widget block -->
-                <div class="col-sm-3 col-xs-6">
-                    <a class="data-block widget-block" href="<?= base_url('administrator/pengguna')?>">
-                        <span class="widget-icon elusive icon-address-book-alt"></span>
-                        <strong>Pengguna</strong>
-                    </a>
-                </div>
-                <!-- /Widget block -->
-
-                <!-- Widget block -->
-                <div class="col-sm-3 col-xs-6">
-                    <a class="data-block widget-block" href="<?= base_url("administrator/kategori")?>">
-                        <span class="widget-icon elusive icon-file-new-alt"></span>
-                        <strong>Kategori</strong>
-                    </a>
-                </div>
-                <!-- /Widget block -->
-
-
-
-                <!-- Widget block -->
-                <div class="col-sm-3 col-xs-6">
-                    <a class="data-block widget-block" href="<?= base_url("administrator/postingan")?>">
-                        <span class="badge">3</span>
-                        <span class="widget-icon elusive icon-globe-alt"></span>
-                        <strong>Postingan</strong>
-                    </a>
-                </div>
-                <!-- /Widget block -->
-
-                <!-- Widget block -->
-                <div class="col-sm-3 col-xs-6">
-                    <a class="data-block widget-block" href="<?= base_url("administrator/kucing")?>">
-                        <span class="widget-icon elusive icon-github"></span>
-                        <strong>Kucing</strong>
-                    </a>
-                </div>
-                <!-- /Widget block -->
-                <!-- Widget block -->
-                <div class="col-sm-3 col-xs-6">
-                    <a class="data-block widget-block" href="<?= base_url("administrator/toko")?>">
-                        <span class="widget-icon elusive icon-shopping-cart-sign"></span>
-                        <strong>Toko (CatShop)</strong>
-                    </a>
-                </div>
-                <!-- /Widget block -->
-
-                <!-- Widget block -->
-                <div class="col-sm-3 col-xs-6">
-                    <a class="data-block widget-block" href="<?= base_url("administrator/kontes")?>">
-                        <span class="widget-icon elusive icon-network"></span>
-                        <strong>Kontes</strong>
-                    </a>
-                </div>
-                <!-- /Widget block -->
-
-                <!-- Widget block -->
-                <div class="col-sm-3 col-xs-6">
-                    <a class="data-block widget-block" href="<?= base_url("administrator/jadwal")?>">
-                        <span class="widget-icon elusive icon-calendar"></span>
-                        <strong>Jadwal</strong>
-                    </a>
-                </div>
-                <!-- /Widget block -->
-                <div class="col-sm-3 col-xs-6">
-                    <a class="data-block widget-block" href="<?= base_url("administrator/profile")?>">
-                        <span class="widget-icon elusive icon-wrench"></span>
-                        <strong>Pengaturan</strong>
-                    </a>
+    <aside class="col-md-4">
+        <!-- START widget-->
+        <!-- END widget-->
+        <!-- START widget-->
+        <div data-toggle="play-animation" data-play="fadeInDown" data-offset="0" data-delay="100" class="panel widget">
+            <div class="panel-body bg-primary">
+                <div class="row row-table row-flush">
+                    <div class="col-xs-8">
+                        <p class="mb0">Administrator</p>
+                        <h3 class="m0">asda</h3>
+                    </div>
+                    <div class="col-xs-4 text-center">
+                        <em class="fa fa-user fa-2x"><sup class="fa fa-plus"></sup>
+                        </em>
+                    </div>
                 </div>
             </div>
-            <!-- /Grid row -->
-
         </div>
-        <!-- /Multi-level scaffolding example -->
-
-        <!-- Data block with TODO list widget -->
-        <div class="col-sm-4">
-            <div class="data-block todo-block">
-                <header>
-                    <h2><span class="elusive icon-folder-open"></span> My TODO list</h2>
-                </header>
-                <section>
-                    <form>
-                        <table class="table">
-                            <tbody>
-                            <tr class="done">
-                                <td><input type="checkbox" value="done" checked></td>
-                                <td>
-                                    <p>doItNow(); does not work as expected</p>
-                                    <span>completed <time>Apr 12</time></span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox" value="done"></td>
-                                <td>
-                                    <p>buy some more socks</p>
-                                    <span>due <time>Apr 12</time></span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox" value="done"></td>
-                                <td>
-                                    <p><span class="label label-danger">Important</span> meeting at 10:30 am</p>
-                                    <span>due <time>Apr 12</time></span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox" value="done"></td>
-                                <td>
-                                    <p>take out the trash</p>
-                                    <span>due <time>Apr 17</time></span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox" value="done"></td>
-                                <td>
-                                    <p><span class="label label-success">Party</span> Eric birthday</p>
-                                    <span>due <time>Apr 22</time></span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox" value="done"></td>
-                                <td>
-                                    <p>team meeting</p>
-                                    <span>due <time>May 22</time></span>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </form>
-                </section>
+        <!-- START widget-->
+    </aside>
+    <aside class="col-md-4">
+        <!-- START widget-->
+        <!-- END widget-->
+        <!-- START widget-->
+        <div data-toggle="play-animation" data-play="fadeInDown" data-offset="0" data-delay="100" class="panel widget">
+            <div class="panel-body bg-success">
+                <div class="row row-table row-flush">
+                    <div class="col-xs-8">
+                        <p class="mb0">Tanaman</p>
+                        <h3 class="m0">1.5k</h3>
+                    </div>
+                    <div class="col-xs-4 text-center">
+                        <em class="fa fa-user fa-2x"><sup class="fa fa-plus"></sup>
+                        </em>
+                    </div>
+                </div>
             </div>
         </div>
-        <!-- /Data block with TODO list widget -->
+        <!-- START widget-->
+    </aside>
+    <aside class="col-md-4">
+        <!-- START widget-->
+        <!-- END widget-->
+        <!-- START widget-->
+        <div data-toggle="play-animation" data-play="fadeInDown" data-offset="0" data-delay="100" class="panel widget">
+            <div class="panel-body bg-warning">
+                <div class="row row-table row-flush">
+                    <div class="col-xs-8">
+                        <p class="mb0">Pemesanan</p>
+                        <h3 class="m0">1.5k</h3>
+                    </div>
+                    <div class="col-xs-4 text-center">
+                        <em class="fa fa-user fa-2x"><sup class="fa fa-plus"></sup>
+                        </em>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- START widget-->
+    </aside>
+    <aside class="col-md-4">
+        <!-- START widget-->
+        <!-- END widget-->
+        <!-- START widget-->
+        <div data-toggle="play-animation" data-play="fadeInDown" data-offset="0" data-delay="100" class="panel widget">
+            <div class="panel-body bg-purple">
+                <div class="row row-table row-flush">
+                    <div class="col-xs-8">
+                        <p class="mb0">pembayaran</p>
+                        <h3 class="m0">1.5k</h3>
+                    </div>
+                    <div class="col-xs-4 text-center">
+                        <em class="fa fa-user fa-2x"><sup class="fa fa-plus"></sup>
+                        </em>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- START widget-->
+    </aside>
+    <aside class="col-md-4">
+        <!-- START widget-->
+        <!-- END widget-->
+        <!-- START widget-->
+        <div data-toggle="play-animation" data-play="fadeInDown" data-offset="0" data-delay="100" class="panel widget">
+            <div class="panel-body bg-gray-darker">
+                <div class="row row-table row-flush">
+                    <div class="col-xs-8">
+                        <p class="mb0">Administrator</p>
+                        <h3 class="m0">1.5k</h3>
+                    </div>
+                    <div class="col-xs-4 text-center">
+                        <em class="fa fa-user fa-2x"><sup class="fa fa-plus"></sup>
+                        </em>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- START widget-->
+    </aside>
+    <aside class="col-md-4">
+        <!-- START widget-->
+        <!-- END widget-->
+        <!-- START widget-->
+        <div data-toggle="play-animation" data-play="fadeInDown" data-offset="0" data-delay="100" class="panel widget">
+            <div class="panel-body bg-info">
+                <div class="row row-table row-flush">
+                    <div class="col-xs-8">
+                        <p class="mb0">Administrator</p>
+                        <h3 class="m0">1.5k</h3>
+                    </div>
+                    <div class="col-xs-4 text-center">
+                        <em class="fa fa-user fa-2x"><sup class="fa fa-plus"></sup>
+                        </em>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- START widget-->
+    </aside>
+
+</div>
+</section>
+<aside class="col-md-3">
+    <!-- START widget-->
+    <!-- END widget-->
+    <!-- START widget-->
+    <div data-toggle="play-animation" data-play="fadeInDown" data-offset="0" data-delay="100" class="panel widget">
+        <div class="panel-body bg-green">
+            <div class="row row-table row-flush">
+                <div class="col-xs-8">
+                    <p class="mb0">New visitors</p>
+                    <h3 class="m0">1.5k</h3>
+                </div>
+                <div class="col-xs-4 text-center">
+                    <em class="fa fa-user fa-2x"><sup class="fa fa-plus"></sup>
+                    </em>
+                </div>
+            </div>
+        </div>
 
     </div>
-
-</section>
+    <!-- START widget-->
+</aside>

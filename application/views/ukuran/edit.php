@@ -4,7 +4,7 @@
 </h3>
 <div class="row">
     <div class="col-md-12">
-        <form action="<?= base_url('administrator/kategori/edit/'.$row['kategori_id'])?>" method="post" data-parsley-validate="" novalidate="" class="form-horizontal">
+        <form action="<?= base_url('administrator/ukuran/edit/'.$row['ukuran_id'])?>" method="post" data-parsley-validate="" novalidate="" class="form-horizontal">
             <!-- START panel-->
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -15,7 +15,7 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Nama</label>
                             <div class="col-sm-6">
-                                <input type="text" name="kategori_nama" required="required" value="<?= $row['kategori_nama']?>" placeholder="nama" class="form-control">
+                                <input type="text" name="ukuran_nama" required="required" value="<?= $row['ukuran_nama']?>" placeholder="nama" class="form-control">
                             </div>
                         </div>
                     </fieldset>

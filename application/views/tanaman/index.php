@@ -1,4 +1,4 @@
-<a type="button" class="btn btn-primary pull-right" href="<?= base_url('administrator/pengguna/tambah')?>">
+<a type="button" class="btn btn-primary pull-right" href="<?= base_url('administrator/tanaman/tambah')?>">
     <em class="fa fa-plus-circle fa-fw mr-sm"></em>Add Item</a>
 <h3><?= $title?>
     <br>
@@ -11,7 +11,7 @@
     <div class="col-lg-12">
         <div class="panel panel-default">
             <div class="panel-heading">Data Tabel |
-                <small>Pengguna</small>
+                <small>Tanaman</small>
             </div>
             <div class="panel-body">
                 <table id="datatable3" class="table table-striped table-hover">
@@ -19,9 +19,10 @@
                     <tr>
                         <th>No</th>
                         <th>Nama</th>
-                        <th>Email</th>
-                        <th>Nomor</th>
-
+                        <th>Kategori</th>
+                        <th>Ukuran</th>
+                        <th>Stok</th>
+                        <th>Harga</th>
                         <th>Aksi</th>
                     </tr>
                     </thead>
@@ -32,12 +33,14 @@
                         ?>
                         <tr class="odd gradeX">
                             <td><?= $no?></td>
-                            <td><?= $key->pengguna_nama?></td>
-                            <td><?= $key->pengguna_email?></td>
-                            <td><?= $key->pengguna_nomor?></td>
+                            <td><?= $key->tanaman_nama?></td>
+                            <td><?= $key->kategori_nama?></td>
+                            <td><?= $key->ukuran_nama?></td>
+                            <td><?= $key->tanaman_stok?></td>
+                            <td><?= $key->tanaman_harga_satuan?></td>
                             <td>
-                                <a href="<?= base_url("administrator/pengguna/edit/".$key->pengguna_id)?>" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
-                                <a onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')" href="<?= base_url("administrator/pengguna/hapus/".$key->pengguna_id)?>"class="btn btn-danger"><i class="fa fa-trash"></i></a></td>
+                                <a href="<?= base_url("administrator/tanaman/edit/".$key->tanaman_id)?>" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
+                                <a onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')" href="<?= base_url("administrator/tanaman/hapus/".$key->tanaman_id)?>"class="btn btn-danger"><i class="fa fa-trash"></i></a></td>
                         </tr>
                         <?php
                         $no++;
@@ -49,10 +52,10 @@
                     <tr>
                         <th>No</th>
                         <th>Nama</th>
-                        <th>Email</th>
-
-                        <th>Nomor</th>
-
+                        <th>Kategori</th>
+                        <th>Ukuran</th>
+                        <th>Stok</th>
+                        <th>Harga</th>
                         <th>Aksi</th>
                     </tr>
                     </tr>

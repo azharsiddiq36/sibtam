@@ -29,6 +29,15 @@
 			$sql = $this->db->get_where($table,$query);
 			return $sql;
 		}
+		public function get_join_table($numberjoin,$sourcetable,$jointable){
+            $this->db->select('*');
+            $this->db->from($sourcetable['name']);
+            for ($i = 0;$i<$numberjoin;$i++){
+                $this->db->join($jointable[0][$i], $jointable[0][$i].'.'.$jointable[1][$i].' = '.$sourcetable['name'].'.'.$sourcetable[0][$i]);
+            }
+            $query = $this->db->get();
+            return $query;
+        }
 		
 		//insert
 		public function insert_data($table,$data)
