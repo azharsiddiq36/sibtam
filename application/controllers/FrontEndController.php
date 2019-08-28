@@ -1,7 +1,7 @@
 <?php
 	defined('BASEPATH') OR exit('No direct script access allowed');
 	
-	class AuthController extends GLOBAL_Controller {
+	class FrontEndController extends GLOBAL_Controller {
 		
 		public function __construct()
 		{
@@ -14,7 +14,7 @@
             $data['page_title'] = '';
             $data['menu'] = '';
             //$this->load->view('templates/template_header');
-            $this->load->view('auth/login');
+            $this->load->view('frontend/index');
         }
 		
 		public function login()
