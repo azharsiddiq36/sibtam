@@ -12,6 +12,7 @@ class PenggunaController extends GLOBAL_Controller
     {
         parent::__construct();
         $this->load->model('PenggunaModel');
+        parent::setRule();
     }
     public function index(){
         $data['title'] = "Dashboard";
@@ -60,43 +61,34 @@ class PenggunaController extends GLOBAL_Controller
         $param = array('pengguna_id'=>$this->session->userdata['pengguna_id']);
         $data['data'] =  parent::model("PenggunaModel")->getOne($param);
         if (isset($_POST['submit'])){
-            $nama = parent::post("nama");
-            $nomor = parent::post("nomor");
-            $email = parent::post("email");
-            $password = parent::post("password");
-            $alamat = parent::post("alamat");
-            $param = null;
-            if($password == $data['data']['pengguna_password']){
+            $nama = parent::post("pengguna_nama");
+            $nomor = parent::post("pengguna_nomor");
+            $email = parent::post("pengguna_email");
+            $alamat = parent::post("pengguna_alamat");
                 $param = array(
                     "pengguna_nama"=>$nama,
                     "pengguna_email" =>$email,
                     "pengguna_nomor" => $nomor,
                     "pengguna_alamat" =>$alamat,
                   );
-            }
-            else{
-                $param = array(
-                    "pengguna_nama"=>$nama,
-                    "pengguna_email" =>$email,
-                    "pengguna_nomor" => $nomor,
-                    "pengguna_alamat" =>$alamat,
-                    "pengguna_password"=>md5($password)
-                );
-            }
             parent::model("PenggunaModel")->editPengguna($this->session->userdata['pengguna_id'],$param);
             parent::alert("msg","Berhasil Merubah Profile");
-            redirect('profile');
-
+            redirect('administrator/profile');
         }
-        if (isset($_POST['ubah'])){
+        else if (isset($_POST['ubah'])){
             $password = parent::post('password');
             $repassword = parent::post('repassword');
             if ($password == $repassword){
-
+                $param = array(
+                    "pengguna_password"=>md5($password),
+                );
+                parent::model("PenggunaModel")->editPengguna($this->session->userdata['pengguna_id'],$param);
+                parent::alert("msg","Berhasil Merubah Profile");
+                redirect('administrator/profile');
             }
             else{
                 parent::alert("msg","Pengulangan Kata Sandi Tidak Sesuai");
-                redirect('profile');
+                redirect('administrator/profile');
             }
         }
         else{

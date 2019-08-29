@@ -1,4 +1,4 @@
-<?php
+    <?php
 	
 	class PenggunaModel extends  GLOBAL_Model {
 

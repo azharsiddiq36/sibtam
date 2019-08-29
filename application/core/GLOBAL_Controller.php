@@ -16,9 +16,15 @@ class GLOBAL_Controller extends CI_Controller {
 	// system helper
     public function setRule(){
         $hak = $this->session->userdata['pengguna_hak_akses'];
-        if ($this->uri->segment(3) != $hak && $hak != "administrator"){
-            redirect(base_url('dashboard'));
-        };
+        if ($hak == null){
+            redirect('login');
+        }
+        else{
+            if ($this->uri->segment(1) != $hak){
+                redirect(base_url('dashboard'));
+            };
+        }
+
     }
 	public function model($model)
 	{
@@ -39,6 +45,13 @@ class GLOBAL_Controller extends CI_Controller {
 		$this->load->view($content, $data);
 		$this->load->view('templates/template_footer', $data);
 	}
+    //	templating helper
+    public function frontend($content,$data)
+    {
+        $this->load->view('frontend/template_header', $data);
+        $this->load->view($content, $data);
+        $this->load->view('frontend/template_footer', $data);
+    }
     public function errorPage($content,$data)
     {
         $this->load->view('templates/template_header', $data);

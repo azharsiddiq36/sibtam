@@ -2,6 +2,11 @@
     <br>
     <small>Sistem Informasi Tanaman Obat</small>
 </h3>
+<?php if ($this->session->flashdata('msg')){
+    ?>
+    <div data-toggle="notify" data-onload data-message="&lt;b&gt;Maaf ! <?= $this->session->flashdata('msg')?>&lt;/b&gt;." data-options="{&quot;status&quot;:&quot;warning&quot;, &quot;pos&quot;:&quot;top-right&quot;}"
+    <?php
+}?>
 <div class="row">
     <div class="col-md-12">
         <form action="<?= base_url('administrator/kategori/edit/'.$row['kategori_id'])?>" method="post" data-parsley-validate="" novalidate="" class="form-horizontal">

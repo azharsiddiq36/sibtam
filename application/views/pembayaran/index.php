@@ -1,10 +1,15 @@
-<a type="button" class="btn btn-primary pull-right" href="<?= base_url('administrator/pembayaran/tambah')?>">
-    <em class="fa fa-plus-circle fa-fw mr-sm"></em>Add Item</a>
+
 <h3><?= $title?>
     <br>
     <small>Sistem Informasi Tanaman Obat</small>
 </h3>
-
+<?php if ($this->session->flashdata('msg')){
+    ?>
+    <div class="auto-hide alert alert-success">
+        <strong>Selamat !</strong> <?= $this->session->flashdata('msg')?>
+    </div>
+    <?php
+}?>
 <div class="row">
 
 <div class="row">
@@ -18,7 +23,11 @@
                     <thead>
                     <tr>
                         <th>No</th>
-                        <th>Nama</th>
+                        <th>Kode Pemesanan</th>
+                        <th>Bukti Pembayaran</th>
+                        <th>Jumlah</th>
+                        <th>Tanggal</th>
+                        <th>Status</th>
                         <th>Aksi</th>
                     </tr>
                     </thead>
@@ -29,10 +38,15 @@
                         ?>
                         <tr class="odd gradeX">
                             <td><?= $no?></td>
-                            <td><?= $key->pembayaran_nama?></td>
+                            <td><?= substr($key->pemesanan_nama,0,2).$key->pemesanan_tanaman_id.$key->pemesanan_id?></td>
+                            <td>    <a href="<?= base_url().'assets/img/upload/'.$key->pembayaran_foto?>" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
+                                <img width="50px" height="50px" src="<?= base_url().'assets/img/upload/'.$key->pembayaran_foto?>"></a></td>
+                            <td><?= $key->pembayaran_jumlah?></td>
+                            <td><?= date_indo(date("Y-m-d",strtotime($key->pembayaran_tanggal)))?></td>
+                            <td><?= $key->pembayaran_status?></td>
                             <td>
-                                <a href="<?= base_url("administrator/pembayaran/edit/".$key->pembayaran_id)?>" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
-                                <a onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')" href="<?= base_url("administrator/pembayaran/hapus/".$key->pembayaran_id)?>"class="btn btn-danger"><i class="fa fa-trash"></i></a></td>
+                                <a onclick="return confirm('Apakah anda yakin mengkonfirmasi pembayaran ini?')" href="<?= base_url("administrator/pembayaran/accept/".$key->pembayaran_id)?>"class="btn btn-success" title="setuju"><i class="fa fa-check"></i></a>
+                                <a onclick="return confirm('Apakah anda yakin menolak pembayaran ini?')" href="<?= base_url("administrator/pembayaran/deny/".$key->pembayaran_id)?>"class="btn btn-danger" title="tolak"><i class="fa fa-close"></i></a></td>
                         </tr>
                         <?php
                         $no++;
@@ -43,7 +57,11 @@
                     <tr>
                     <tr>
                         <th>No</th>
-                        <th>Nama</th>
+                        <th>Kode Pemesanan</th>
+                        <th>Bukti Pembayaran</th>
+                        <th>Jumlah</th>
+                        <th>Tanggal</th>
+                        <th>Status</th>
                         <th>Aksi</th>
                     </tr>
                     </tr>

@@ -26,13 +26,12 @@
             return parent::delete_row($this->initTable(),$data);
         }
         public function getJoin(){
-            $numberofjoin = 2;
             $sourceTable = array('name'=>$this->initTable(),
                 array('tanaman_kategori_id','tanaman_ukuran_id'));//array unique or id source
             $destinationTable = array(
-                array('tbl_kategori','tbl_ukuran'), //array table
-                array('kategori_id','ukuran_id'));//array unique or id destination
-            return parent::get_join_table($numberofjoin,$sourceTable,$destinationTable);
+                'table'=>array('tbl_kategori','tbl_ukuran'), //array table
+                'id'=>array('kategori_id','ukuran_id'));//array unique or id destination
+            return parent::get_join_table($sourceTable,$destinationTable);
         }
 
     }

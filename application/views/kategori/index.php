@@ -1,10 +1,17 @@
+
+
 <a type="button" class="btn btn-primary pull-right" href="<?= base_url('administrator/kategori/tambah')?>">
     <em class="fa fa-plus-circle fa-fw mr-sm"></em>Add Item</a>
+
 <h3><?= $title?>
     <br>
     <small>Sistem Informasi Tanaman Obat</small>
 </h3>
-
+<?php if ($this->session->flashdata('msg')){
+    ?>
+    <div data-toggle="notify" data-onload data-message="&lt;b&gt;Selamat ! <?= $this->session->flashdata('msg')?>&lt;/b&gt;." data-options="{&quot;status&quot;:&quot;success&quot;, &quot;pos&quot;:&quot;top-right&quot;}"
+    <?php
+}?>
 <div class="row">
 
 <div class="row">

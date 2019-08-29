@@ -10,8 +10,10 @@ class KategoriController extends GLOBAL_Controller
 {
     public function __construct()
     {
+
         parent::__construct();
         $this->load->model('KategoriModel');
+        parent::setRule();
     }
     public function index(){
         $data['title'] = "Dashboard";

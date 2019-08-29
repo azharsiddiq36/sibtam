@@ -25,8 +25,13 @@
         public function deletePembayaran($data){
             return parent::delete_row($this->initTable(),$data);
         }
-        public function checkMail($data){
-            return parent::get_object_of_row($this->initTable(),$data);
+        public function getJoin(){
+            $sourceTable = array('name'=>$this->initTable(),
+                array('pembayaran_pemesanan_id'));//array unique or id source
+            $destinationTable = array(
+                'table'=>array('tbl_pemesanan'), //array table
+                'id'=>array('pemesanan_id'));//array unique or id destination
+            return parent::get_join_table($sourceTable,$destinationTable);
         }
 
     }

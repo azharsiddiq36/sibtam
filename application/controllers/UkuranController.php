@@ -12,6 +12,7 @@ class UkuranController extends GLOBAL_Controller
     {
         parent::__construct();
         $this->load->model('UkuranModel');
+        parent::setRule();
     }
     public function index(){
         $data['title'] = "Dashboard";

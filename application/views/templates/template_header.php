@@ -81,11 +81,7 @@
             <!-- START Right Navbar-->
             <ul class="nav navbar-nav navbar-right">
                 <!-- Search icon-->
-                <li>
-                    <a href="dashboard.html#" data-toggle="navbar-search">
-                        <em class="fa fa-search"></em>
-                    </a>
-                </li>
+
                 <!-- START Alert menu-->
 
                 <!-- END Alert menu-->
@@ -99,9 +95,9 @@
 
                         <li class="divider"></li>
 
-                        <li><a href="dashboard.html#">Settings</a>
+                        <li><a href="<?= base_url('administrator/profile')?>">Settings</a>
                         </li>
-                        <li><a href="dashboard.html#">Logout</a>
+                        <li><a onclick="return confirm('Apakah anda ingin keluar dari sistem ?')" href="<?= base_url('administrator/logout')?>">Logout</a>
                         </li>
                     </ul>
                     <!-- END Dropdown menu-->
@@ -140,29 +136,29 @@
 
                     <!-- END SubMenu item-->
                 </li>
-                <li>
+                <li class="<?php if ($this->uri->segment(2) == 'pengguna' || $this->uri->segment(2) == 'tanaman' || $this->uri->segment(2) == 'ukuran'||$this->uri->segment(2) == 'kategori'){ echo 'active';}?>">
                     <a href="dashboard.html#" title="Data Master" data-toggle="collapse-next" class="has-submenu">
                         <em class="fa fa-flask"></em>
                         <span class="item-text">Data Master</span>
                     </a>
                     <!-- START SubMenu item-->
-                    <ul class="nav collapse ">
-                        <li>
+                    <ul class="<?php if ($this->uri->segment(2) == 'pengguna' || $this->uri->segment(2) == 'tanaman' || $this->uri->segment(2) == 'ukuran'||$this->uri->segment(2) == 'kategori'){ echo 'nav collapse in';}else{ echo 'nav collapse';}?>">
+                        <li class="<?php if ($this->uri->segment(2) == 'pengguna'){ echo 'active';}?>">
                             <a href="<?= base_url('administrator/pengguna')?>" title="Panels" data-toggle="" class="no-submenu">
                                 <span class="item-text">Pengguna</span>
                             </a>
                         </li>
-                        <li>
+                        <li class="<?php if ($this->uri->segment(2) == 'tanaman'){ echo 'active';}?>">
                             <a href="<?= base_url('administrator/tanaman')?>" title="Panels" data-toggle="" class="no-submenu">
                                 <span class="item-text">Tanaman</span>
                             </a>
                         </li>
-                        <li>
+                        <li class="<?php if ($this->uri->segment(2) == 'ukuran'){ echo 'active';}?>">
                             <a href="<?= base_url('administrator/ukuran')?>" title="Panels" data-toggle="" class="no-submenu">
                                 <span class="item-text">Ukuran</span>
                             </a>
                         </li>
-                        <li>
+                        <li class="<?php if ($this->uri->segment(2) == 'kategori'){ echo 'active';}?>">
                             <a href="<?= base_url('administrator/kategori')?>" title="Panels" data-toggle="" class="no-submenu">
                                 <span class="item-text">Kategori</span>
                             </a>
@@ -175,18 +171,18 @@
                         <em class="fa fa-file-text-o"></em>
                         <span class="item-text">Transaksi</span>
                     </a>
-                    <ul class="nav collapse ">
-                        <li>
+                    <ul class="<?php if ( $this->uri->segment(2) == 'pemesanan' || $this->uri->segment(2) == 'pembayaran'||$this->uri->segment(2) == 'cetak'){ echo 'nav collapse in';}else{ echo 'nav collapse';}?>">
+                        <li class="<?php if ($this->uri->segment(2) == 'pemesanan'){ echo 'active';}?>">
                             <a href="<?= base_url('administrator/pemesanan')?>" title="Landing" data-toggle="" class="no-submenu">
                                 <span class="item-text">Pemesanan</span>
                             </a>
                         </li>
-                        <li>
+                        <li class="<?php if ($this->uri->segment(2) == 'pembayaran'){ echo 'active';}?>">
                             <a href="<?= base_url('administrator/pembayaran')?>" title="Landing" data-toggle="" class="no-submenu">
                                 <span class="item-text">Pembayaran</span>
                             </a>
                         </li>
-                        <li>
+                        <li class="<?php if ($this->uri->segment(2) == 'cetak'){ echo 'active';}?>">
                             <a href="<?= base_url('administrator/cetak')?>" title="Landing" data-toggle="" class="no-submenu">
                                 <span class="item-text">Cetak</span>
                             </a>

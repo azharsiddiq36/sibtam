@@ -53,6 +53,7 @@
 <script src="<?= base_url()?>assets/vendor/datatable/extensions/datatable-bootstrap/js/dataTables.bootstrapPagination.js"></script>
 <script src="<?= base_url()?>assets/vendor/datatable/extensions/ColVis/js/dataTables.colVis.min.js"></script>
 <!-- END Scripts-->
+
 </body>
 
 </html>

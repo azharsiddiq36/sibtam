@@ -22,9 +22,12 @@ $route['administrator/pemesanan/edit/(:any)'] = 'PemesananController/edit/$1';
 $route['administrator/pemesanan/hapus/(:any)'] = 'PemesananController/delete/$1';
 //Pembayaran
 $route['administrator/pembayaran'] = 'PembayaranController/daftar';
+$route['administrator/cetak'] = 'CetakController/index';
+$route['administrator/print'] = 'CetakController/printData';
 $route['administrator/pembayaran/tambah'] = 'PembayaranController/tambah';
 $route['administrator/pembayaran/edit/(:any)'] = 'PembayaranController/edit/$1';
-$route['administrator/pembayaran/hapus/(:any)'] = 'PembayaranController/delete/$1';
+$route['administrator/pembayaran/accept/(:any)'] = 'PembayaranController/accept/$1';
+$route['administrator/pembayaran/deny/(:any)'] = 'PembayaranController/deny/$1';
 //Ukuran
 $route['administrator/ukuran'] = 'UkuranController/daftar';
 $route['administrator/ukuran/tambah'] = 'UkuranController/tambah';
@@ -38,7 +41,7 @@ $route['administrator/tanaman/hapus/(:any)'] = 'TanamanController/delete/$1';
 // authentication
 $route['administrator/logout'] = 'AuthController/logout';
 $route['login'] = 'AuthController/login';
-$route['default_controller'] = 'AuthController';
+$route['default_controller'] = 'FrontEndController';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 

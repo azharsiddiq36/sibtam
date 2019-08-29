@@ -4,7 +4,11 @@
     <br>
     <small>Sistem Informasi Tanaman Obat</small>
 </h3>
-
+<?php if ($this->session->flashdata('msg')){
+    ?>
+    <div data-toggle="notify" data-onload data-message="&lt;b&gt;Selamat ! <?= $this->session->flashdata('msg')?>&lt;/b&gt;." data-options="{&quot;status&quot;:&quot;success&quot;, &quot;pos&quot;:&quot;top-right&quot;}"
+    <?php
+}?>
 <div class="row">
 
 <div class="row">

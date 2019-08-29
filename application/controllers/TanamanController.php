@@ -14,6 +14,7 @@ class TanamanController extends GLOBAL_Controller
         $this->load->model('TanamanModel');
         $this->load->model('KategoriModel');
         $this->load->model('UkuranModel');
+        $this->setRule();
     }
     public function index(){
         $data['title'] = "Dashboard";

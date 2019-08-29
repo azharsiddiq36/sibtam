@@ -1,5 +1,4 @@
-<a type="button" class="btn btn-primary pull-right" href="<?= base_url('administrator/pemesanan/tambah')?>">
-    <em class="fa fa-plus-circle fa-fw mr-sm"></em>Add Item</a>
+
 <h3><?= $title?>
     <br>
     <small>Sistem Informasi Tanaman Obat</small>
@@ -19,7 +18,13 @@
                     <tr>
                         <th>No</th>
                         <th>Nama</th>
-                        <th>Aksi</th>
+                        <th>Tanaman</th>
+                        <th>Jumlah</th>
+                        <th>Harga</th>
+                        <th>Tanggal</th>
+                        <th>Nomor</th>
+                        <th>Alamat</th>
+                        <th>Status</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -30,9 +35,14 @@
                         <tr class="odd gradeX">
                             <td><?= $no?></td>
                             <td><?= $key->pemesanan_nama?></td>
-                            <td>
-                                <a href="<?= base_url("administrator/pemesanan/edit/".$key->pemesanan_id)?>" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
-                                <a onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')" href="<?= base_url("administrator/pemesanan/hapus/".$key->pemesanan_id)?>"class="btn btn-danger"><i class="fa fa-trash"></i></a></td>
+                            <td><?= $key->tanaman_nama?></td>
+                            <td><?= $key->pemesanan_jumlah?></td>
+                            <td><?= $key->pemesanan_harga?></td>
+                            <td><?= date_indo(date("Y-m-d",strtotime($key->pemesanan_tanggal)))?></td>
+                            <td><?= $key->pemesanan_nomor?></td>
+                            <td><?= $key->pemesanan_alamat?></td>
+                            <td><?= $key->pemesanan_status  ?></td>
+
                         </tr>
                         <?php
                         $no++;
@@ -44,7 +54,13 @@
                     <tr>
                         <th>No</th>
                         <th>Nama</th>
-                        <th>Aksi</th>
+                        <th>Tanaman</th>
+                        <th>Jumlah</th>
+                        <th>Harga</th>
+                        <th>Tanggal</th>
+                        <th>Nomor</th>
+                        <th>Alamat</th>
+                        <th>Status</th>
                     </tr>
                     </tr>
                     </tfoot>

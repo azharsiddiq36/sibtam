@@ -19,10 +19,11 @@
 		
 		public function login()
 		{
-			$data['title'] = 'Masuk ke CatMeet';
+			$data['title'] = 'Masuk ke Sibtam';
 			if (isset($_POST['submit'])){
 				$username = parent::post('email');
 				$password = parent::post('password');
+
 				$loginData = parent::model('AuthModel')->get_pengguna($username,md5($password));
 				$existsStatus = $loginData->num_rows();
 				$existsData   = $loginData->row_array();

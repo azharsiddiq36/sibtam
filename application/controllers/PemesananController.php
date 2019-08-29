@@ -12,6 +12,8 @@ class PemesananController extends GLOBAL_Controller
     {
         parent::__construct();
         $this->load->model('PemesananModel');
+        $this->load->model('TanamanModel');
+        parent::setRule();
     }
     public function index(){
         $data['title'] = "Dashboard";
@@ -19,7 +21,7 @@ class PemesananController extends GLOBAL_Controller
     }
     public function daftar(){
         $data['title'] = "Tabel Pemesanan";
-        $data['data'] = parent::model('PemesananModel')->get_pemesanan()->result();
+        $data['data'] = parent::model('PemesananModel')->getJoin()->result();
         parent::template('pemesanan/index',$data);
     }
     //Tambah Pemesanan
