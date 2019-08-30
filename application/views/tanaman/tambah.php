@@ -9,7 +9,7 @@
 }?>
 <div class="row">
     <div class="col-md-12">
-        <form action="<?= base_url('administrator/tanaman/tambah')?>" method="post" data-parsley-validate="" novalidate="" class="form-horizontal">
+        <form action="<?= base_url('administrator/tanaman/tambah')?>" enctype="multipart/form-data" method="post" data-parsley-validate="" novalidate="" class="form-horizontal">
             <!-- START panel-->
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -55,6 +55,14 @@
                                     endforeach;
                                     ?>
                                 </select>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Foto</label>
+                            <div class="col-sm-6">
+                                <input type="file" name="foto" required="required" placeholder="Stok">
                             </div>
                         </div>
                     </fieldset>

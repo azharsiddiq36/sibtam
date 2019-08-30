@@ -23,7 +23,7 @@
                     <thead>
                     <tr>
                         <th>No</th>
-                        <th>Kode Pemesanan</th>
+                        <th>Nomor Pemesanan</th>
                         <th>Bukti Pembayaran</th>
                         <th>Jumlah</th>
                         <th>Tanggal</th>
@@ -38,7 +38,7 @@
                         ?>
                         <tr class="odd gradeX">
                             <td><?= $no?></td>
-                            <td><?= substr($key->pemesanan_nama,0,2).$key->pemesanan_tanaman_id.$key->pemesanan_id?></td>
+                            <td><?= $key->pemesanan_tanaman_id?></td>
                             <td>    <a href="<?= base_url().'assets/img/upload/'.$key->pembayaran_foto?>" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
                                 <img width="50px" height="50px" src="<?= base_url().'assets/img/upload/'.$key->pembayaran_foto?>"></a></td>
                             <td><?= $key->pembayaran_jumlah?></td>

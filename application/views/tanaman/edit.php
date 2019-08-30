@@ -9,7 +9,7 @@
 }?>
 <div class="row">
     <div class="col-md-12">
-        <form action="<?= base_url('administrator/tanaman/edit') ?>" method="post" data-parsley-validate=""
+        <form action="<?= base_url('administrator/tanaman/edit/'.$row['tanaman_id']) ?>" method="post" data-parsley-validate=""
               novalidate="" class="form-horizontal">
             <!-- START panel-->
             <div class="panel panel-default">

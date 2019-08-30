@@ -31,7 +31,9 @@
             $destinationTable = array(
                 'table'=>array('tbl_kategori','tbl_ukuran'), //array table
                 'id'=>array('kategori_id','ukuran_id'));//array unique or id destination
-            return parent::get_join_table($sourceTable,$destinationTable);
+            $this->db->order_by('tanaman_nama','asc');
+            $query = parent::get_join_table($sourceTable,$destinationTable);
+            return $query;
         }
 
     }

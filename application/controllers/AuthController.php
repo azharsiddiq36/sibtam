@@ -45,7 +45,7 @@
                     }
 				}else{
 					parent::alert('msg','Email atau Password Salah');
-					redirect(site_url());
+					redirect(site_url('login'));
 				}
 			}else{
 				parent::authPage('auth/login',$data);

@@ -18,7 +18,7 @@
                         <thead>
                         <tr>
                             <th style="padding: 5px">No</th>
-                            <th style="padding: 5px">Kode Pemesanan</th>
+                            <th style="padding: 5px">Nomor Pemesanan</th>
                             <th style="padding: 5px">Nama Pemesan</th>
                             <th style="padding: 5px">Tanaman</th>
                             <th style="padding: 5px">Ukuran</th>
@@ -50,7 +50,7 @@
                                 ?>
                                 <tr class="odd gradeX">
                                     <td style="padding: 5px"><?= $no?></td>
-                                    <td style="padding: 5px"><?= substr($key->pemesanan_nama,0,2).$key->pemesanan_tanaman_id.$key->pemesanan_id?></td>
+                                    <td style="padding: 5px"><?= $key->pemesanan_tanaman_id?></td>
                                     <td style="padding: 5px"><?= $key->pemesanan_nama?></td>
                                     <td style="padding: 5px"><?= $tanaman['tanaman_nama']?></td>
                                     <td style="padding: 5px"><?= $ukuran['ukuran_nama']?></td>

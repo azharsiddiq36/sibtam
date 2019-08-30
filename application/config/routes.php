@@ -38,10 +38,15 @@ $route['administrator/tanaman'] = 'TanamanController/daftar';
 $route['administrator/tanaman/tambah'] = 'TanamanController/tambah';
 $route['administrator/tanaman/edit/(:any)'] = 'TanamanController/edit/$1';
 $route['administrator/tanaman/hapus/(:any)'] = 'TanamanController/delete/$1';
+//FrontEnd
+$route['pemesanan/(:any)'] = 'FrontEndController/pesan/$1';
+$route['pembayaran'] = 'FrontEndController/bayar';
+$route['pembayaran/(:any)'] = 'FrontEndController/bayar/$1';
 // authentication
 $route['administrator/logout'] = 'AuthController/logout';
 $route['login'] = 'AuthController/login';
 $route['default_controller'] = 'FrontEndController';
+$route['welcome'] = 'FrontEndController';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 

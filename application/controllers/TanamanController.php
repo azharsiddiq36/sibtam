@@ -29,21 +29,47 @@ class TanamanController extends GLOBAL_Controller
     //Tambah Tanaman
     public function tambah(){
         if(isset($_POST['submit'])){
+            $foto = null;
             $nama = parent::post("tanaman_nama");
             $ukuran = parent::post("tanaman_ukuran");
             $kategori = parent::post("tanaman_kategori");
             $harga = parent::post("tanaman_harga_satuan");
             $stok = parent::post("tanaman_stok");
+            $config['upload_path'] = './assets/img/upload/';
+            $config['allowed_types'] = 'gif|jpg|png';
+            $config['max_size'] = 204800;
+            $this->upload->initialize($config);
+            if ( !$this->upload->do_upload('foto')){
+                $error = array('error' => $this->upload->display_errors());
+                var_dump($error);die;
+            }
+            else {
+                $config['image_library'] = 'gd2';
+                $config['source_image'] = './assets/img/upload/' . $this->upload->data('file_name');
+                $config['create_thumb'] = FALSE;
+                $config['maintain_ratio'] = FALSE;
+                $config['quality'] = '50%';
+                $config['width'] = 1024;
+                $config['height'] = 768;
+                $config['new_image'] = './assets/img/upload/' . $this->upload->data('file_name');
+                $this->load->library('image_lib', $config);
+                $this->image_lib->resize();
+                $foto = $this->upload->data('file_name');
                 $data = array(
                     "tanaman_nama"=>$nama,
                     "tanaman_kategori_id"=>$kategori,
                     "tanaman_ukuran_id"=>$ukuran,
                     "tanaman_harga_satuan"=>$harga,
                     "tanaman_stok"=>$stok,
+                    "tanaman_foto"=>$foto
                 );
                 parent::model("TanamanModel")->post_tanaman($data);
                 parent::alert("msg","Berhasil Menambahkan Data !!!");
                 redirect("administrator/tanaman");
+            }
+
+
+
 
         }
         else{
@@ -55,6 +81,7 @@ class TanamanController extends GLOBAL_Controller
     }
     public function edit(){
         $id = $this->uri->segment(4);
+
         if(isset($_POST['submit'])){
             $nama = parent::post("tanaman_nama");
             $ukuran = parent::post("tanaman_ukuran");
@@ -63,6 +90,7 @@ class TanamanController extends GLOBAL_Controller
             $stok = parent::post("tanaman_stok");
             $data = array(
                 "tanaman_nama"=>$nama,
+                "tanaman_foto"=>$foto,
                 "tanaman_kategori_id"=>$kategori,
                 "tanaman_ukuran_id"=>$ukuran,
                 "tanaman_harga_satuan"=>$harga,

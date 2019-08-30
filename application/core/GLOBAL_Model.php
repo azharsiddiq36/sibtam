@@ -36,6 +36,7 @@
             for ($i = 0;$i<count($jointable['table']);$i++){
                 $this->db->join($jointable['table'][$i], $jointable['table'][$i].'.'.$jointable['id'][$i].' = '.$sourcetable['name'].'.'.$sourcetable[0][$i]);
             }
+
             $query = $this->db->get();
             return $query;
         }

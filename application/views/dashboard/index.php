@@ -12,12 +12,13 @@
         <!-- START widget-->
         <!-- END widget-->
         <!-- START widget-->
+        <a href="<?= base_url('administrator/pengguna')?>">
         <div data-toggle="play-animation" data-play="fadeInDown" data-offset="0" data-delay="100" class="panel widget">
             <div class="panel-body bg-primary">
                 <div class="row row-table row-flush">
                     <div class="col-xs-8">
-                        <p class="mb0">Administrator</p>
-                        <h3 class="m0">asda</h3>
+                        <p class="mb0">Pengguna</p>
+
                     </div>
                     <div class="col-xs-4 text-center">
                         <em class="fa fa-user fa-2x"><sup class="fa fa-plus"></sup>
@@ -26,18 +27,20 @@
                 </div>
             </div>
         </div>
+        </a>
         <!-- START widget-->
     </aside>
     <aside class="col-md-4">
         <!-- START widget-->
         <!-- END widget-->
         <!-- START widget-->
+        <a href="<?= base_url('administrator/tanaman')?>">
         <div data-toggle="play-animation" data-play="fadeInDown" data-offset="0" data-delay="100" class="panel widget">
             <div class="panel-body bg-success">
                 <div class="row row-table row-flush">
                     <div class="col-xs-8">
                         <p class="mb0">Tanaman</p>
-                        <h3 class="m0">1.5k</h3>
+
                     </div>
                     <div class="col-xs-4 text-center">
                         <em class="fa fa-user fa-2x"><sup class="fa fa-plus"></sup>
@@ -46,18 +49,20 @@
                 </div>
             </div>
         </div>
+        </a>
         <!-- START widget-->
     </aside>
     <aside class="col-md-4">
         <!-- START widget-->
         <!-- END widget-->
         <!-- START widget-->
+        <a href="<?= base_url('administrator/pemesanan')?>">
         <div data-toggle="play-animation" data-play="fadeInDown" data-offset="0" data-delay="100" class="panel widget">
             <div class="panel-body bg-warning">
                 <div class="row row-table row-flush">
                     <div class="col-xs-8">
                         <p class="mb0">Pemesanan</p>
-                        <h3 class="m0">1.5k</h3>
+
                     </div>
                     <div class="col-xs-4 text-center">
                         <em class="fa fa-user fa-2x"><sup class="fa fa-plus"></sup>
@@ -66,18 +71,20 @@
                 </div>
             </div>
         </div>
+        </a>
         <!-- START widget-->
     </aside>
     <aside class="col-md-4">
         <!-- START widget-->
         <!-- END widget-->
         <!-- START widget-->
+        <a href="<?= base_url('administrator/pembayaran')?>">
         <div data-toggle="play-animation" data-play="fadeInDown" data-offset="0" data-delay="100" class="panel widget">
             <div class="panel-body bg-purple">
                 <div class="row row-table row-flush">
                     <div class="col-xs-8">
                         <p class="mb0">pembayaran</p>
-                        <h3 class="m0">1.5k</h3>
+
                     </div>
                     <div class="col-xs-4 text-center">
                         <em class="fa fa-user fa-2x"><sup class="fa fa-plus"></sup>
@@ -86,18 +93,20 @@
                 </div>
             </div>
         </div>
+        </a>
         <!-- START widget-->
     </aside>
     <aside class="col-md-4">
         <!-- START widget-->
         <!-- END widget-->
         <!-- START widget-->
+        <a href="<?= base_url('administrator/kategori')?>">
         <div data-toggle="play-animation" data-play="fadeInDown" data-offset="0" data-delay="100" class="panel widget">
             <div class="panel-body bg-gray-darker">
                 <div class="row row-table row-flush">
                     <div class="col-xs-8">
-                        <p class="mb0">Administrator</p>
-                        <h3 class="m0">1.5k</h3>
+                        <p class="mb0">Kategori</p>
+
                     </div>
                     <div class="col-xs-4 text-center">
                         <em class="fa fa-user fa-2x"><sup class="fa fa-plus"></sup>
@@ -106,18 +115,20 @@
                 </div>
             </div>
         </div>
+        </a>
         <!-- START widget-->
     </aside>
     <aside class="col-md-4">
         <!-- START widget-->
         <!-- END widget-->
         <!-- START widget-->
+        <a href="<?= base_url('administrator/ukuran')?>">
         <div data-toggle="play-animation" data-play="fadeInDown" data-offset="0" data-delay="100" class="panel widget">
             <div class="panel-body bg-info">
                 <div class="row row-table row-flush">
                     <div class="col-xs-8">
-                        <p class="mb0">Administrator</p>
-                        <h3 class="m0">1.5k</h3>
+                        <p class="mb0">Ukuran</p>
+
                     </div>
                     <div class="col-xs-4 text-center">
                         <em class="fa fa-user fa-2x"><sup class="fa fa-plus"></sup>
@@ -126,6 +137,7 @@
                 </div>
             </div>
         </div>
+        </a>
         <!-- START widget-->
     </aside>
 
@@ -135,12 +147,13 @@
     <!-- START widget-->
     <!-- END widget-->
     <!-- START widget-->
+    <a href="<?= base_url('administrator/cetak')?>">
     <div data-toggle="play-animation" data-play="fadeInDown" data-offset="0" data-delay="100" class="panel widget">
         <div class="panel-body bg-green">
             <div class="row row-table row-flush">
                 <div class="col-xs-8">
-                    <p class="mb0">New visitors</p>
-                    <h3 class="m0">1.5k</h3>
+                    <p class="mb0">Cetak</p>
+
                 </div>
                 <div class="col-xs-4 text-center">
                     <em class="fa fa-user fa-2x"><sup class="fa fa-plus"></sup>
@@ -150,5 +163,6 @@
         </div>
 
     </div>
+    </a>
     <!-- START widget-->
 </aside>
