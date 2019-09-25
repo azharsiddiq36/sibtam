@@ -10,9 +10,8 @@
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="<?= base_url()?>assets/frontend/assets/images/icons/icon_logo.png">
     <!-- Place favicon.ico in the root directory -->
-
+    <link rel='stylesheet' type='text/css' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css'>
     <link rel="stylesheet" href="<?= base_url()?>assets/frontend/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?= base_url()?>assets/frontend/assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?= base_url()?>assets/frontend/assets/css/ionicons.min.css">
     <link rel="stylesheet" href="<?= base_url()?>assets/frontend/assets/css/css-plugins-call.css">
     <link rel="stylesheet" href="<?= base_url()?>assets/frontend/assets/css/bundle.css">
@@ -35,11 +34,23 @@
         <div class="header-top-area">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-6 col-sm-6">
+                    <div class="col-lg-12">
                         <div class="top-bar-left">
                             <!-- welcome -->
                             <div class="welcome">
                                 <p>Selamat Datang pada Sistem Informasi Bibit Tanaman</p>
+                                <?php if(count($this->session->userdata())<=1){
+                                    ?>
+                                    <h5 style="float: right"><a style="color: white" href="<?= base_url('login')?>">Login</a></h5>
+                                <?php
+                                }
+                                else{
+                                    ?>
+
+                                    <h5 style="float: right"><a style="color: white" href="<?= base_url('administrator/logout')?>">(<?= $this->session->userdata['pengguna_nama']?>) Logout</a></h5>
+                                <?php
+                                }?>
+
                             </div>
                         </div>
                     </div>
@@ -63,9 +74,9 @@
                                     <li><a href="<?= base_url()?>">Home</a></li>
 <!--                                    <li><a href="--><?//= base_url('pemesanan')?><!--">Pemesanan</a></li>-->
                                     <li><a href="<?= base_url('pembayaran')?>">Pembayaran</a></li>
-                                    <li><a href="<?= base_url('login')?>">Login</a></li>
 
                                 </ul>
+
                             </nav>
                         </div>
                     </div>

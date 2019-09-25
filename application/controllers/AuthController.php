@@ -34,10 +34,17 @@
 						'pengguna_nama' => $existsData['pengguna_nama'],
 						'pengguna_hak_akses' => $existsData['pengguna_hak_akses'],
                         'pengguna_foto' => $existsData['pengguna_foto'],
+                        'pengguna_nomor' => $existsData['pengguna_nomor'],
+                        'pengguna_email' => $existsData['pengguna_email'],
+                        'pengguna_alamat' => $existsData['pengguna_alamat'],
 					);
                     $this->session->set_userdata($sessData);
+
 					if ($existsData['pengguna_hak_akses'] == "administrator"){
                         redirect(site_url('administrator/dashboard'));
+                    }
+                    else if($existsData['pengguna_hak_akses'] == "pembeli"){
+					    redirect('welcome');
                     }
                     else{
                         parent::alert('msg','Hak Akses Kamu Tidak Terdaftar');
@@ -52,8 +59,15 @@
 			}
 		}
 		public function logout(){
-		    session_destroy();
-		    redirect('login');
+		    if ($this->session->userdata['pengguna_hak_akses'] == 'administrator'){
+                session_destroy();
+                redirect('login');
+            }
+            else{
+                session_destroy();
+                redirect('welcome');
+            }
+
         }
 		
 		

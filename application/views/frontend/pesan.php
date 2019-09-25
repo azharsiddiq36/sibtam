@@ -17,15 +17,15 @@
                         <div class="row">
                             <div class="col-lg-6 col-md-12">
                                 <div class="form-group">
-                                    <label>Nama Depan*</label>
-                                    <input type="text" name="depandepan" required placeholder="Nama Depan" class="form-control">
+                                    <label>Nama*</label>
+                                    <input type="text" readonly value="<?= $this->session->userdata['pengguna_nama']?>" name="depandepan" required placeholder="Nama Depan" class="form-control">
                                 </div>
                             </div>
 
                             <div class="col-lg-6 col-md-12">
                                 <div class="form-group">
-                                    <label>Nama Belakang*</label>
-                                    <input type="text" name="belakang" placeholder="Nama Belakang" class="form-control">
+                                    <label>Email*</label>
+                                    <input type="text" readonly value="<?= $this->session->userdata['pengguna_email']?>" placeholder="Nama Belakang" class="form-control">
                                 </div>
                             </div>
 
@@ -44,13 +44,13 @@
                             <div class="col-lg-12 col-md-12">
                                 <div class="form-group">
                                     <label>Nomor</label>
-                                    <input type="text" name="nomor" required placeholder="Nomor Handphone" class="form-control">
+                                    <input type="text" readonly name="nomor" value="<?= $this->session->userdata['pengguna_nomor']?>" required placeholder="Nomor Handphone" class="form-control">
                                 </div>
                             </div>
                             <div class="col-lg-12 col-md-12">
                                 <div class="form-group">
                                     <label>Alamat</label>
-                                    <input type="text" name="alamat" placeholder="alamat" class="form-control">
+                                    <input type="text" readonly name="alamat" value="<?= $this->session->userdata['pengguna_alamat']?>" placeholder="alamat" class="form-control">
                                 </div>
                             </div>
                         </div>

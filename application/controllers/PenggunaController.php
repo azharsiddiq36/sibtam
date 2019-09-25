@@ -12,10 +12,13 @@ class PenggunaController extends GLOBAL_Controller
     {
         parent::__construct();
         $this->load->model('PenggunaModel');
+        $this->load->model('TanamanModel');
         parent::setRule();
     }
     public function index(){
         $data['title'] = "Dashboard";
+        $data['data'] = parent::model('TanamanModel')->getCount()->num_rows();
+        $data['stok'] = parent::model('TanamanModel')->getstok()->num_rows();
         parent::template('dashboard/index',$data);
     }
     public function daftar(){

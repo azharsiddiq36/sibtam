@@ -5,13 +5,13 @@
             <div class="row">
                 <div class="col-sm-12 col-xl-9">
                     <div class="newsletter-text">
-                        <div class="icon"><i class="icon ion-email"></i></div>
+                        <div class="icon"><i class=""></i></div>
                         <h3>Terimakasih Telah Berkunjung</h3>
 
                     </div>
 
                 </div>
-                <div class="col-sm-12 col-xl-3">
+                <!-- <div class="col-sm-12 col-xl-3">
                     <div class="footer-social">
                         <ul class="social-icons">
                             <li><a class="facebook social-icon" href="index.html#" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
@@ -21,7 +21,7 @@
                             <li><a class="rss social-icon" href="index.html#" title="Rss" target="_blank"><i class="fa fa-rss"></i></a></li>
                         </ul>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

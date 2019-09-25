@@ -33,5 +33,21 @@
                 'id'=>array('pemesanan_id'));//array unique or id destination
             return parent::get_join_table($sourceTable,$destinationTable);
         }
+        public function getAllJoinDate($mulai,$selesai){
+            $this->db->select('*');
+            $this->db->from($this->initTable());
+            $this->db->join('tbl_pemesanan', 'tbl_pembayaran.pembayaran_pemesanan_id = tbl_pemesanan.pemesanan_id');
+            $this->db->where('pembayaran_tanggal BETWEEN "'. date('Y-m-d', strtotime($mulai)). '" and "'. date('Y-m-d', strtotime($selesai)).'"');
+            $query = $this->db->get();
+            return $query;
+        }
+        public function getNowJoin($date){
+            $this->db->select('*');
+            $this->db->from($this->initTable());
+            $this->db->join('tbl_pemesanan', 'tbl_pembayaran.pembayaran_pemesanan_id = tbl_pemesanan.pemesanan_id');
+            $this->db->where('date_format(pembayaran_tanggal,"%Y-%m-%d")', $date);
+            $query = $this->db->get();
+            return $query;
+        }
 
     }

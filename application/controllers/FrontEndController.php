@@ -11,12 +11,13 @@
             $this->load->model('UkuranModel');
             $this->load->model('PemesananModel');
             $this->load->model('PembayaranModel');
+            $this->load->model('PenggunaModel');
 
 		}
         public function index()
         {
-            $data['title'] = 'Sistem Informasi Tanaman Obat';
-            $data['page_title'] = '';
+            $data['title'] = 'Sistem Informasi Bibit Tanaman';
+
             $data['data'] = parent::model('TanamanModel')->getJoin()->result();
             parent::frontend('frontend/index',$data);
         }
@@ -93,7 +94,7 @@
 		        $harga = parent::post('harga');
 		        $param = array(
 		            'pemesanan_tanaman_id'=>$id,
-		            'pemesanan_nama'=>$namadepan.' '.$belakang,
+		            'pemesanan_nama'=>$this->session->userdata['pengguna_nama'],
 		            'pemesanan_nomor'=>$nomor,
                     'pemesanan_alamat'=>$alamat,
                     'pemesanan_jumlah' => $jumlah,
@@ -101,7 +102,7 @@
                 );
 		        parent::model('PemesananModel')->post_pemesanan($param);
                 $param = array("pemesanan_tanaman_id"=>$id,
-                    "pemesanan_nama"=>$namadepan.' '.$belakang);
+                    "pemesanan_nama"=>$this->session->userdata['pengguna_nama']);
 		        $data['pemesanan'] = parent::model('PemesananModel')->getOne($param);
 
                 $param = array("tanaman_id"=>$id);
@@ -113,6 +114,11 @@
                 $data['ukuran'] = parent::model('UkuranModel')->getOne($param);
 		        parent::frontend('frontend/pesan',$data);
             }else{
+		        if ($this->session->userdata['pengguna_hak_akses']==null){
+                    parent::alert('msg','Anda harus login untuk melakukan pemesanan');
+                    redirect('login');
+                }
+                else{
                 $param = array("tanaman_id"=>$id);
                 $data['data'] = parent::model('TanamanModel')->getOne($param);
                 $param = array("kategori_id"=>$data['data']['tanaman_kategori_id']);
@@ -120,8 +126,41 @@
                 $param = array("ukuran_id"=>$data['data']['tanaman_ukuran_id']);
                 $data['ukuran'] = parent::model('UkuranModel')->getOne($param);
                 parent::frontend('frontend/pesan',$data);
+		        }
+            }
+
+        }
+        public function tambah(){
+            if(isset($_POST['submit'])){
+                $nama = parent::post("pengguna_nama");
+                $password = parent::post("pengguna_password");
+                $email = parent::post("pengguna_email");
+                $alamat = parent::post("pengguna_alamat");
+                $nomor = parent::post("pengguna_nomor");
+                $data = array("pengguna_email"=>$email);
+                if (parent::model("PenggunaModel")->checkMail($data)->num_rows()<1){
+                    $data = array(
+                        "pengguna_nama"=>$nama,
+                        "pengguna_password"=>md5($password),
+                        "pengguna_email" =>$email,
+                        "pengguna_nomor" => $nomor,
+                        "pengguna_alamat" =>$alamat,
+                        "pengguna_hak_akses" =>'pembeli',
+                    );
+                    parent::model("PenggunaModel")->post_pengguna($data);
+                    parent::alert("succcess","Berhasil Menambahkan Mendaftar !!!");
+                    redirect("login");
+                }
+                else{
+                    $data['title'] = "Sistem Informasi Bibit Tanaman";
+                    parent::alert("msg","Email Telah Tedaftar !!!");
+                    redirect("login");
+                }
+            }
+            else{
+                $data['title'] = "Sistem Informasi Bibit Tanaman";
+                parent::frontend('frontend/tambah',$data);
             }
         }
-
 
 	}

@@ -12,6 +12,7 @@ class PembayaranController extends GLOBAL_Controller
     {
         parent::__construct();
         $this->load->model('PembayaranModel');
+        $this->load->model('PemesananModel');
         $this->load->model('TanamanModel');
         parent::setRule();
     }
@@ -81,6 +82,14 @@ class PembayaranController extends GLOBAL_Controller
         $data['title'] = "Pembayaran";
         $id = $this->uri->segment(4);
         $data = array(
+            "pembayaran_id"=>$id,
+        );
+        $pemesanan = parent::model("PembayaranModel")->getOne($data);
+        $data = array(
+            "pemesanan_status"=>"selesai"
+        );
+        parent::model("PemesananModel")->editPemesanan($pemesanan['pembayaran_pemesanan_id'],$data);
+        $data = array(
             "pembayaran_status"=>'selesai',
         );
         parent::model("PembayaranModel")->editPembayaran($id,$data);
@@ -90,6 +99,15 @@ class PembayaranController extends GLOBAL_Controller
     public function deny(){
         $data['title'] = "Pembayaran";
         $id = $this->uri->segment(4);
+        $data = array(
+            "pembayaran_id"=>$id,
+        );
+        $pemesanan = parent::model("PembayaranModel")->getOne($data);
+        $data = array(
+            "pemesanan_status"=>"ditolak"
+        );
+        parent::model("PemesananModel")->editPemesanan($pemesanan['pembayaran_pemesanan_id'],$data);
+
         $data = array(
             "pembayaran_status"=>'ditolak',
         );

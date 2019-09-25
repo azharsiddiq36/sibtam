@@ -1,7 +1,7 @@
 
 <h3><?= $title?>
     <br>
-    <small>Sistem Informasi Tanaman Obat</small>
+    <small>Sistem Informasi Bibit Tanaman</small>
 </h3>
 
 <div class="row">
@@ -17,6 +17,7 @@
                     <thead>
                     <tr>
                         <th>No</th>
+                        <th>Nomor Pemesanan</th>
                         <th>Nama</th>
                         <th>Tanaman</th>
                         <th>Jumlah</th>
@@ -34,6 +35,7 @@
                         ?>
                         <tr class="odd gradeX">
                             <td><?= $no?></td>
+                            <td><?= $key->pemesanan_id?></td>
                             <td><?= $key->pemesanan_nama?></td>
                             <td><?= $key->tanaman_nama?></td>
                             <td><?= $key->pemesanan_jumlah?></td>
@@ -53,6 +55,7 @@
                     <tr>
                     <tr>
                         <th>No</th>
+                        <th>Nomor Pemesanan</th>
                         <th>Nama</th>
                         <th>Tanaman</th>
                         <th>Jumlah</th>

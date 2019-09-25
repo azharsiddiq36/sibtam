@@ -19,8 +19,8 @@
     <!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
     <!-- Bootstrap CSS-->
     <link rel="stylesheet" href="<?= base_url()?>assets/css/bootstrap.css">
+    <link rel='stylesheet' type='text/css' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css'>
     <!-- Vendor CSS-->
-    <link rel="stylesheet" href="<?= base_url()?>assets/vendor/fontawesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?= base_url()?>assets/vendor/animo/animate+animo.css">
     <!-- App CSS-->
     <link rel="stylesheet" href="<?= base_url()?>assets/css/app.css">
@@ -41,7 +41,14 @@
                 <strong>Maaf, </strong> <?= $this->session->flashdata('msg') ?>
             </div>
             <?php
-        } ?>
+        }
+        elseif ($this->session->flashdata('success')){
+            ?>
+            <div class="auto-hide alert alert-success" role="alert">
+                <strong>Maaf, </strong> <?= $this->session->flashdata('success') ?>
+            </div>
+        <?php
+        }?>
         <!-- START panel-->
         <div data-toggle="play-animation" data-play="fadeIn" data-offset="0" class="panel panel-dark panel-flat">
             <div class="panel-heading text-center">
@@ -61,6 +68,7 @@
                     </div>
                     <button name="submit" type="submit" class="btn btn-block btn-success">Login</button>
                 </form>
+                <a href="<?= base_url('daftar')?>">Daftar</a>
             </div>
         </div>
         <!-- END panel-->

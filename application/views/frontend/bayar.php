@@ -3,7 +3,7 @@
         if ($this->session->flashdata('msg')){
             ?>
             <div class="auto-hide alert alert-success">
-                <strong>Maaf !</strong> <?= $this->session->flashdata('msg') ?>
+                <strong>Selamat !</strong> <?= $this->session->flashdata('msg') ?>
             </div>
         <?php
         }

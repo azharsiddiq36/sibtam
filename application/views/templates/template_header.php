@@ -16,11 +16,11 @@
     <meta name="author" content="">
     <title>Sibtam</title>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
+
     <!-- Bootstrap CSS-->
     <link rel="stylesheet" href="<?= base_url()?>assets/css/bootstrap.css">
+    <link rel='stylesheet' type='text/css' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css'>
     <!-- Vendor CSS-->
-    <link rel="stylesheet" href="<?= base_url()?>assets/vendor/fontawesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?= base_url()?>assets/vendor/animo/animate+animo.css">
     <link rel="stylesheet" href="<?= base_url()?>assets/vendor/csspinner/csspinner.min.css">
     <!-- START Page Custom CSS-->
@@ -88,7 +88,7 @@
                 <!-- START User menu-->
                 <li class="dropdown">
                     <a href="dashboard.html#" data-toggle="dropdown" data-play="fadeIn" class="dropdown-toggle">
-                        <em class="fa fa-tencent-weibo"></em>
+                        <em class="fa fa-user"></em>
                     </a>
                     <!-- START Dropdown menu-->
                     <ul class="dropdown-menu">
@@ -129,7 +129,7 @@
                 <li class="nav-heading">Main</li>
                 <li class="<?php if ($this->uri->segment(2) == 'dashboard'){ echo 'active';}?>">
                     <a href="<?= base_url('administrator/dashboard')?>" title="Dashboard" class="has-submenu">
-                        <em class="fa fa-dot-circle-o"></em>
+                        <em class="fa fa-home"></em>
                         <span class="item-text">Dashboard</span>
                     </a>
                     <!-- START SubMenu item-->
@@ -138,7 +138,7 @@
                 </li>
                 <li class="<?php if ($this->uri->segment(2) == 'pengguna' || $this->uri->segment(2) == 'tanaman' || $this->uri->segment(2) == 'ukuran'||$this->uri->segment(2) == 'kategori'){ echo 'active';}?>">
                     <a href="dashboard.html#" title="Data Master" data-toggle="collapse-next" class="has-submenu">
-                        <em class="fa fa-flask"></em>
+                        <em class="fa fa-list"></em>
                         <span class="item-text">Data Master</span>
                     </a>
                     <!-- START SubMenu item-->
@@ -168,7 +168,7 @@
                 </li>
                 <li>
                     <a href="dashboard.html#" title="Transaksi" data-toggle="collapse-next" class="has-submenu">
-                        <em class="fa fa-file-text-o"></em>
+                        <em class="fa fa-file"></em>
                         <span class="item-text">Transaksi</span>
                     </a>
                     <ul class="<?php if ( $this->uri->segment(2) == 'pemesanan' || $this->uri->segment(2) == 'pembayaran'||$this->uri->segment(2) == 'cetak'){ echo 'nav collapse in';}else{ echo 'nav collapse';}?>">
@@ -184,7 +184,7 @@
                         </li>
                         <li class="<?php if ($this->uri->segment(2) == 'cetak'){ echo 'active';}?>">
                             <a href="<?= base_url('administrator/cetak')?>" title="Landing" data-toggle="" class="no-submenu">
-                                <span class="item-text">Cetak</span>
+                                <span class="item-text">Laporan</span>
                             </a>
                         </li>
                     </ul>

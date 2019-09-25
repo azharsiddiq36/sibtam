@@ -1,6 +1,6 @@
 <h3><?= $title ?>
     <br>
-    <small>Sistem Informasi Tanaman Obat</small>
+    <small>Sistem Informasi Bibit Tanaman</small>
 </h3>
 <?php if ($this->session->flashdata('msg')){
     ?>

@@ -35,5 +35,20 @@
             $query = parent::get_join_table($sourceTable,$destinationTable);
             return $query;
         }
+        public function getCount(){
+            $this->db->select('*');
+            $this->db->from($this->initTable());
+            $this->db->where('tanaman_stok <= 10');
+            $this->db->where('tanaman_stok >= 1');
+            $query = $this->db->get();
+            return $query;
+        }
+        public function getstok(){
+            $this->db->select('*');
+            $this->db->from($this->initTable());
+            $this->db->where('tanaman_stok <= 1');
+            $query = $this->db->get();
+            return $query;
+        }
 
     }

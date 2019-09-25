@@ -38,7 +38,7 @@
                             <td><?= $no?></td>
                             <td><?= $key->kategori_nama?></td>
                             <td>
-                                <a href="<?= base_url("administrator/kategori/edit/".$key->kategori_id)?>" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
+                                <a href="<?= base_url("administrator/kategori/edit/".$key->kategori_id)?>" class="btn btn-warning"><i class="fa fa-edit"></i></a>
                                 <a onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')" href="<?= base_url("administrator/kategori/hapus/".$key->kategori_id)?>"class="btn btn-danger"><i class="fa fa-trash"></i></a></td>
                         </tr>
                         <?php

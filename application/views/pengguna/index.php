@@ -2,7 +2,7 @@
     <em class="fa fa-plus-circle fa-fw mr-sm"></em>Add Item</a>
 <h3><?= $title?>
     <br>
-    <small>Sistem Informasi Tanaman Obat</small>
+    <small>Sistem Informasi Bibit Tanaman</small>
 </h3>
 <?php if ($this->session->flashdata('msg')){
     ?>
@@ -40,7 +40,7 @@
                             <td><?= $key->pengguna_email?></td>
                             <td><?= $key->pengguna_nomor?></td>
                             <td>
-                                <a href="<?= base_url("administrator/pengguna/edit/".$key->pengguna_id)?>" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
+                                <a href="<?= base_url("administrator/pengguna/edit/".$key->pengguna_id)?>" class="btn btn-warning"><i class="fa fa-edit"></i></a>
                                 <a onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')" href="<?= base_url("administrator/pengguna/hapus/".$key->pengguna_id)?>"class="btn btn-danger"><i class="fa fa-trash"></i></a></td>
                         </tr>
                         <?php

@@ -2,15 +2,50 @@
     <em class="fa fa-plus-circle fa-fw mr-sm"></em>Print</a>
 <h3><?= $title?>
     <br>
-    <small>Sistem Informasi Tanaman Obat</small>
+    <small>Sistem Informasi Bibit Tanaman</small>
 </h3>
 
 <div class="row">
+    <div class="col-md-12">
+        <form action="<?= base_url('administrator/cetak')?>" method="post" data-parsley-validate="" novalidate="" class="form-horizontal">
+            <!-- START panel-->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="panel-title">Select Tanggal</div>
+                </div>
+                <div class="panel-body">
+                    <fieldset>
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                <div class="row">
+                                    <div class="col-md-2"></div>
+                                    <label class="col-sm-1 control-label">Mulai</label>
+                                    <div class="col-md-3">
+                                        <input type="date" name="tgl_mulai" style="padding-bottom: 40px" placeholder=".col-md-2" class="form-control">
+                                    </div>
+                                    <label class="col-sm-1 control-label">Selesai</label>
+                                    <div class="col-md-3">
+                                        <input type="date" style="padding-bottom: 40px" name="tgl_selesai" placeholder=".col-md-3" class="form-control">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <button type="submit" style="padding: 10px;margin-top: 3px" class="btn btn-info" name="submit">Select</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
 
+
+            </div>
+            <!-- END panel-->
+        </form>
+    </div>
     <div class="row">
+
         <div class="col-lg-12">
             <div class="panel panel-default" id="doPrint">
-                <div class="panel-heading"><h3><p align="center">Sistem Informasi Tanaman Obat
+                <div class="panel-heading"><h3><p align="center">Sistem Informasi Bibit Tanaman
                         </p></h3>
                 </div>
                 <div class="panel-body">
@@ -50,7 +85,7 @@
                                 ?>
                                 <tr class="odd gradeX">
                                     <td style="padding: 5px"><?= $no?></td>
-                                    <td style="padding: 5px"><?= $key->pemesanan_tanaman_id?></td>
+                                    <td style="padding: 5px"><?= $key->pemesanan_id?></td>
                                     <td style="padding: 5px"><?= $key->pemesanan_nama?></td>
                                     <td style="padding: 5px"><?= $tanaman['tanaman_nama']?></td>
                                     <td style="padding: 5px"><?= $ukuran['ukuran_nama']?></td>
@@ -69,7 +104,14 @@
                         ?>
                         </tbody>
                     </table>
+                    <div style="padding: 50px;float: right;margin-right: 13%">
+                        <p align="center"><?= "Sungai Pinang, ". date_indo(date("Y-m-d"))?></>
+                        <br><br><br>
+                        <b><p align="center">Jumadil Khairun</p></b>
+                    </div>
                 </div>
+
+
             </div>
         </div>
     </div>

@@ -49,4 +49,5 @@ $route['default_controller'] = 'FrontEndController';
 $route['welcome'] = 'FrontEndController';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+$route['daftar'] = 'FrontEndController/tambah';
 
